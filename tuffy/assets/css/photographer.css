@@ -25,6 +25,11 @@ h1, h2, h3, h4, h5, h6 {
 	padding-right: 20px;
 }
 
+.tuffy_drop_nav {
+    border-bottom: 0px !important;
+    border-top: 1px solid #ddd !important;
+}
+
 /* Masthead */
 
 .logo {
