@@ -37,6 +37,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #FFF;
     color: #000;
 }
+.nav-tabs {
+    border-bottom: 1px solid #FFF !important;
+}
 .nav-tabs > li > a:hover {
     border-color: #F8F8F8 !important;
 }
