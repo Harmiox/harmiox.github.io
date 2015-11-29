@@ -48,7 +48,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 2px !important;
     border-radius: 5px !important;
 }
-
+.nav-tabs > li > a {
+    font-family: "Pacifico";
+    font-size: 18px;
+}
+    
 /* Masthead */
 
 .logo {
