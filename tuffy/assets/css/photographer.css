@@ -27,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .tuffy_drop_nav {
     border-bottom: 0px !important;
-    border-top: 1px solid #ddd !important;
     font-family: "Pacifico";
     font-size: 18px;
 }
