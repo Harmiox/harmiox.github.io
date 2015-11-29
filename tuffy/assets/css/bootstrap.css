@@ -3460,7 +3460,7 @@ tbody.collapse.in {
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #337ab7;
+  background-color: #A0A0A0;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -3886,8 +3886,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #eee;
-  border-color: #337ab7;
+    background-color: #FFF;
+    border-color: #FFF;
+    color: #000
 }
 .nav .nav-divider {
   height: 1px;
@@ -3909,7 +3910,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-right: 2px;
   line-height: 1.42857143;
   border: 1px solid transparent;
-  border-radius: 2px 2px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 .nav-tabs > li > a:hover {
   border-color: #eee #eee #ddd;

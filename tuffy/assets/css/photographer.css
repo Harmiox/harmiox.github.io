@@ -31,6 +31,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .tuffy_drop_nav > li > a  {
     border-radius: 0px 0px 2px 2px !important;
+    font-family: "Pacifico";
+    font-size: 18px;
 }
 
 /* Masthead */
