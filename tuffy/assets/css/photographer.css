@@ -32,9 +32,17 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
 }
 .tuffy_drop_nav > li > a  {
-    border-radius: 0px 0px 2px 2px !important;
+    border-radius: 0px 0px 5px 5px !important;
     font-family: "Pacifico";
     font-size: 18px;
+    background-color: #FFF;
+    color: #000;
+}
+.nav-tabs > li > a:hover {
+    border-color: #eee #eee #ddd !important;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #FFF !important;
 }
 
 /* Masthead */
