@@ -55,6 +55,14 @@ h1, h2, h3, h4, h5, h6 {
 	box-shadow: 0 1px 8px black;
 }
 
+.socials_pos {
+	background: url("../img/headerbg.jpg");
+	position: fixed;
+	bottom: 5px; !important
+	left: 5px; !important
+	box-shadow: 0 1px 8px black;
+}
+
 /* Thumbnails */
 
 .thumbnails {
