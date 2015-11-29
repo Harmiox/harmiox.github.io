@@ -3899,7 +3899,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
 .nav-tabs > li {
   float: left;
@@ -3909,7 +3909,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-right: 2px;
   line-height: 1.42857143;
   border: 1px solid transparent;
-  border-radius: 2px 2px 0 0;
+  border-radius: 0 0 2px 2px;
 }
 .nav-tabs > li > a:hover {
   border-color: #eee #eee #ddd;
