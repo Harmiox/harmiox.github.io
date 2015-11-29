@@ -38,10 +38,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
 }
 .nav-tabs > li > a:hover {
-    border-color: #eee #eee #ddd !important;
+    border-color: #E0E0E0 !important;
 }
 .nav > li > a:hover, .nav > li > a:focus {
-    background-color: #FFF !important;
+    background-color: #E0E0E0 !important;
 }
 
 /* Masthead */
