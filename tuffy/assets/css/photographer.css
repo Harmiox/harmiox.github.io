@@ -38,13 +38,17 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
 }
 .nav-tabs {
-    border-bottom: 1px solid #FFF !important;
+    border-bottom: 1px solid #FFF;
 }
 .nav-tabs > li > a:hover {
     border-color: #F8F8F8 !important;
 }
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: #F8F8F8 !important;
+}
+
+ul.nav.nav-tabs.pull-right.navbar-right.visible-xs.tuffy_drop_nav {
+    border-bottom: 0px solid #FFF !important;
 }
 
 .nav-tabs .dropdown-menu {
