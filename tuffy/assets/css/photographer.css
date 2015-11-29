@@ -28,12 +28,12 @@ h1, h2, h3, h4, h5, h6 {
 .tuffy_drop_nav {
     border-bottom: 0px !important;
     font-family: "Pacifico";
-    font-size: 18px;
+    font-size: 18px !important;
 }
 .tuffy_drop_nav > li > a  {
     border-radius: 0px 0px 5px 5px !important;
     font-family: "Pacifico";
-    font-size: 18px;
+    font-size: 18px !important;
     background-color: #FFF;
     color: #000;
 }
