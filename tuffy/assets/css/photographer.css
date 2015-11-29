@@ -198,7 +198,7 @@ div.socials.pull-right.hidden-xs {
 	margin: 10px 0 0 10px;
 	text-align: center;
 	border-radius: 20px;
-	opacity: 0.5;
+	/*opacity: 0.5;*/
 	-webkit-transition: all 0.1s ease-in-out;
 	-moz-transition: all 0.1s ease-in-out;
 	-o-transition: all 0.1s ease-in-out;
@@ -212,7 +212,7 @@ div.socials.pull-right.hidden-xs {
 }
 
 .socials a:hover {
-	opacity: 1;
+	opacity: 0.7;
 	-webkit-transition: all 0.1s ease-in-out;
 	-moz-transition: all 0.1s ease-in-out;
 	-o-transition: all 0.1s ease-in-out;
