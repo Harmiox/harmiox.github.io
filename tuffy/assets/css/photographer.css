@@ -218,6 +218,7 @@ div.socials.pull-right.hidden-xs {
 
 .socials a:hover {
 	/* opacity: 0.7; */
+    color: #000;
     background: #FFF;
     border-radius: 5px 5px 0px 0px;
 	-webkit-transition: all 0.1s ease-in-out;
