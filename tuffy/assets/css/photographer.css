@@ -50,7 +50,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 .nav-tabs > li > a {
     font-family: "Pacifico";
-    font-size: 12px;
+    font-size: 16px;
+    /*margin: 10px 0 0 10px;*/
+}
+
+div.socials.pull-right.hidden-xs {
+    border-bottom: 1px solid #fff !important;
+}
+
+.navbar-right ~ .navbar-right {
+    position: relative;
+    top: 17px !important;
+    font-size: 20px !important;
 }
     
 /* Masthead */
