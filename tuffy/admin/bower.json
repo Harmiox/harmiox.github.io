@@ -1,0 +1,37 @@
+{
+  "name": "b2evolution",
+  "version": "6.6.6",
+  "description": "Multiblog/CMS + user community + email marketing + social network + everything you need to run and maintain a modern website (PHP/MySQL).",
+  "devDependencies": {
+    "jquery": ">=1.11.1",
+    "bootstrap": ">=3.3.2"
+  },
+  "authors": [
+    "Francois Planque <fplanque@users.noreply.github.com>"
+  ],
+  "main": "install/index.php",
+  "keywords": [
+    "cms",
+    "blog",
+    "forum",
+    "php",
+    "mysql",
+    "gallery",
+    "social",
+    "community"
+  ],
+  "license": "GPL-2.0+",
+  "homepage": "http://b2evolution.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "_tests",
+    "_transifex",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json",
+    "readme.md",
+    "readme.template.html"
+  ]
+}

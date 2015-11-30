@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>b2evolution readme</title>
+		<!-- Bootstrap -->
+		<link href="rsc/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		<link href="rsc/build/b2evo_helper_screens.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<nav>
+					<ul class="nav nav-pills pull-right">
+						<li role="presentation" class="active"><a href="readme.html">Read me</a></li>
+						<li role="presentation"><a href="install/index.php">Installer</a></li>
+						<li role="presentation"><a href="index.php">Your site</a></li>
+					</ul>
+				</nav>
+				<h3 class="text-muted"><a href="http://b2evolution.net/"><img class="b2evolution_plane_logo" src="rsc/img/b2evolution_254x52.svg" alt="b2evolution CCMS"></a></h3>
+			</div>
+
+			<div class="jumbotron">
+				<h2 class="h1">Welcome to b2evolution!</h2>
+				<p class="lead">If you're new to b2evolution, we recommend you follow our <a href="http://b2evolution.net/man/getting-started" class="text-nowrap">Getting Stated / Installation Guide</a>.</p>
+				<p class="lead">If you're about to upgrade make sure you know the different <a href="http://b2evolution.net/man/upgrading" class="text-nowrap">Upgrade Options</a>.</p>
+			</div>
+
+<h1 id="b2evolution-ccms">b2evolution CCMS</h1>
+<p>This is version <strong>6.6.6-stable</strong>.</p>
+<h2 id="a-complete-engine-for-your-website-">A complete engine for your website !</h2>
+<p>Multiblog/CMS + user community + email marketing + social network + more...
+b2evolution includes everything you need to run and maintain a modern website.
+Plus, it&#39;s optimized for low maintenance with easy upgrades and effective antispam. Full Bootstrap &amp; RWD support.</p>
+<p>More info: <a href="http://b2evolution.net">http://b2evolution.net</a></p>
+<h2 id="requirements">Requirements</h2>
+<p>Basically, all you need is a standard <a href="http://b2evolution.net/web-hosting/top-quality-best-webhosting.php">web hosting plan</a>.</p>
+<p>More specifically, your web server should support PHP 5.2+, MySQL 5+ &amp; Apache 2+ (which is very common). More info about these requirements <a href="http://b2evolution.net/man/installation-upgrade/system_requirements">here</a>.</p>
+<h2 id="downloading">Downloading</h2>
+<h3 id="with-bower">With Bower</h3>
+<p>If you&#39;re familiar with bower, just type: <code>bower install b2evolution</code></p>
+<h3 id="manual-download">Manual Download</h3>
+<p>You can download releases either from GitHub or from b2evolution.net :</p>
+<ul>
+<li><a href="https://github.com/b2evolution/b2evolution/releases">https://github.com/b2evolution/b2evolution/releases</a></li>
+<li><a href="http://b2evolution.net/downloads/">http://b2evolution.net/downloads/</a></li>
+</ul>
+<h2 id="installation-amazing-3-minute-install-">Installation: Amazing 3-minute install ;)</h2>
+<p>Upload everything to your web server and call the installation script that you will find at <code>/install/index.php</code> on your website. Then you just need to enter your database connection details and the installer will take care of everything for you.</p>
+<p>Now, you might ask for more details here... Totally legitimate! Please check out our <a href="http://b2evolution.net/man/getting-started">Getting Stated - Installation Guide</a>.</p>
+<p>Hint: It is possible to install b2evolution in less than 3 minutes. Probably not the first time though. (And the same is true for anyone else claiming a 5 minute install process.)</p>
+<h2 id="upgrading">Upgrading</h2>
+<h3 id="automatic-upgrade">Automatic upgrade</h3>
+<p>b2evolution includes an automatic upgrade feature which you can use to automatically download the lastest stable version and perform the upgrade operations.</p>
+<h3 id="manual-upgrade">Manual upgrade</h3>
+<p>You can download any newer version (including beta releases), overwrite the files of your current installation (after backup) and then run the install script.</p>
+<p>The installation script will detect that the b2evolution database is already installed (any version) and offer to upgrade it to the current version.</p>
+<p>There are <a href="http://b2evolution.net/man/upgrading">several other upgrade options</a>.</p>
+<h2 id="github">GitHub</h2>
+<p>This version of b2evolution comes from the &quot;i7&quot; (currently &quot;master&quot;) branch on GitHub.</p>
+<p>All bug fixes and all new code are made available through GitHub before being packaged as releases. If you are interested in cutting-edge versions, we recommend you <a href="https://github.com/b2evolution/b2evolution">follow us on GitHub</a>.</p>
+
+
+			<footer class="footer">
+				<p class="pull-right"><a href="https://github.com/b2evolution/b2evolution" class="text-nowrap">GitHub page</a></p>
+				<p><a href="http://b2evolution.net/" class="text-nowrap">b2evolution.net</a>
+				&bull; <a href="http://b2evolution.net/about/recommended-hosting-lamp-best-choices.php" class="text-nowrap">Find a host</a>
+				&bull; <a href="http://b2evolution.net/man/" class="text-nowrap">Online manual</a>
+				&bull; <a href="http://forums.b2evolution.net" class="text-nowrap">Help forums</a>
+				</p>
+			</footer>
+
+		</div><!-- /container -->
+	</body>
+</html>

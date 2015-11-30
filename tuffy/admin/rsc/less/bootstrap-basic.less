@@ -1,0 +1,916 @@
+/*
+ * Obviously, this file no longer contains only basic styles.
+ * It now also contains all sorts of base styles like the toolbar and debug for backward comaptibility with older skins... :/
+ */
+
+// MILOS> Prevents from scrolling right on all Bootstrap skins
+html, body {
+	width: auto !important;
+	overflow-x: hidden !important;
+}
+
+// CSS to show containers, widgets and includes: 
+@import "_dev-blocks.module.less";
+
+.border-radius (@radius: 4px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.transition( @transition ) {
+	-webkit-transition: @transition;
+			 -o-transition: @transition;
+					transition: @transition;
+}
+
+// Mark the nofollow links with pink background color on mouseover event
+// fp> I actually want to keep this on all skins. It's an attempt to dissuade spammers to spam by showing visually them that the links are nofollow.
+a[rel~=nofollow]:not([class~=btn]):hover {
+	background: #f8e0e0;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border-radius: 2px;
+}
+
+// Image styles:
+img.loadimg {
+	display: inline-block;
+	min-width: 64px;
+	min-height: 64px;
+	background: url(../img/ajax-loader/fff.gif) no-repeat center;
+}
+figure {
+	margin: 1em 0;
+}
+.evo_image_block {
+	// WARNING: this will screw out backoffice layout (fulltext edit screen)
+	text-align: center;
+}
+// Used to limit max width of the replied comments,
+// because width of the replied comment can be very small
+// (Each level of the replied comments has additional 20px margin left)
+.replied_comment .evo_image_block img {
+	max-width: 100%;
+	height: auto;
+}
+// Description text under image
+.evo_image_legend {
+	font-size: 84%;
+	color: #aaa;
+	padding: 9px 6px 6px 6px;
+	text-align: center;
+}
+// Rounded images
+.image_rounded img {
+	.border-radius( 50% );
+}
+// Avatar images
+img.avatar_before_login {
+	margin-right: 2px;
+	vertical-align: top;
+}
+img.avatar_before_login_middle {
+	margin-right: 2px;
+	vertical-align: middle;
+}
+img.avatar_above_login {
+	display: block;
+	margin: 0 auto;
+}
+// ---------------- //
+
+// Limit width of the table cells to text length without new line breaks
+.shrinkwrap {
+	width: 1%;
+	white-space: nowrap;
+	text-align: center;
+}
+.shrinkwrap.left {
+	text-align: left;
+}
+
+.block {
+	margin: 1ex;
+	white-space: nowrap;
+}
+
+a.selected {
+	font-weight: bold;
+}
+
+// Round corners of avatar images:
+.avatar_rounded {
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 2px;
+	display: inline-block;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	text-align: center;
+	box-sizing: content-box;
+}
+.avatar_rounded:hover {
+	text-decoration: none;
+}
+.avatar_rounded img {
+	-moz-border-radius-topleft: 2px; -moz-border-radius-topright: 2px;
+	-webkit-border-radius: 2px 2px 0 0;
+	-khtml-border-radius-topleft: 2px; -khtml-border-radius-topright: 2px;
+	border-radius: 2px 2px 0 0;
+	margin-bottom: 2px;
+}
+// ---------------- //
+
+// Layout for editing the avatars on "Profile picture" pages:
+div.avatartag {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 0.5em 0.5em 0;
+	a {
+		outline: none;
+	}
+	&.main {
+		display: block;
+		float: none !important;
+		&>a {
+			float: left;
+		}
+		a:first-child {
+			margin-right: 25px;
+		}
+		.avatar_actions {
+			margin-right: 25px;
+		}
+	}
+}
+.avatar_actions {
+	float: left;
+	line-height: 26px;
+}
+.avatar_main_frame {
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 2px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	display: table;
+	vertical-align: middle;
+}
+.avatar_main_frame img {
+	-moz-border-radius-topleft: 2px; -moz-border-radius-bottomleft: 2px;
+	-webkit-border-radius: 2px 0 0 2px;
+	-khtml-border-radius-topleft: 2px; -khtml-border-radius-bottomleft: 2px;
+	border-radius: 2px 0 0 2px;
+}
+.avatar_main_frame > a:first-child {
+	float: left;
+	margin-right: 5px;
+}
+.duplicated_avatars {
+	text-align: center;
+	max-width: 160px;
+}
+.avatar_main_frame .duplicated_avatars {
+	max-width: 320px;
+}
+.duplicated_avatars a.user img {
+	vertical-align: text-top;
+}
+div.avatartag.main > img:first-child {
+	float: left;
+	margin-right: 25px;
+}
+@media only screen and (max-width: 600px) {
+	div.avatar_main_frame {
+		> a:first-child {
+			margin-right: 0;
+			float: none;
+		}
+		.avatar_actions {
+			display: block;
+		}
+	}
+}
+@media only screen and (max-width: 480px) {
+	.avatar_main_frame {
+		> a:first-child {
+			margin-right: 0;
+		}
+		img {
+			max-width: 245px;
+			max-height: 245px;
+		}
+	}
+}
+// Avatars on the edit forms
+form {
+	div.avatartag {
+		float: left;
+		margin: 0 0.5em 0.5em 0;
+		a {
+			outline: none;
+		}
+	}
+}
+// ---------------- //
+
+// Window to crop profile image:
+#fieldset_wrapper_image_crop .crop_button {
+	display: none;
+}
+#image_crop_block {
+	display: table;
+}
+#image_crop_block > div {
+	display: table-cell;
+	vertical-align: top;
+}
+#target_cropped_image {
+	float: left;
+	margin: 0 10px 10px 0;
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+#target_cropped_image img {
+	height: auto;
+	width: auto;
+}
+.preview_cropped_images {
+	width: 128px;
+	text-align: center;
+	&.only_small_preview {
+		width: auto;
+	}
+}
+.preview_cropped_image {
+	display: inline-block;
+	overflow: hidden;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+}
+.preview_cropped_image.circle {
+	border-radius: 50%;
+}
+.crop_button {
+	text-align: center;
+}
+.crop_button.top {
+	display: none;
+}
+#image_crop_block.short_width > div { display: block; }
+#image_crop_block.short_width .preview_cropped_images { text-align: left; width: auto; }
+#image_crop_block.short_width .preview_cropped_image { margin-right: 10px; }
+@media only screen and (max-width: 900px) {
+	#fieldset_wrapper_image_crop fieldset{ padding: 0 !important; }
+	//#target_cropped_image{ margin-right: 0; }
+	#image_crop_block > div { display: inline-block; }
+	#overlay_page .preview_cropped_images,
+	.preview_cropped_images { text-align: left !important; width: auto !important; display: inline-block; }
+	.preview_cropped_image { margin-right: 10px; }
+	.crop_button.top { display: block; }
+	.crop_button.bottom { display: none; }
+	#image_crop legend{ padding: 10px; box-sizing: border-box; }
+}
+// Fix to hide radio button
+.jcrop-keymgr {
+	visibility: hidden;
+}
+// ---------------- //
+
+// Evo Toolbar:
+// Note: there may be some properties that seem overkill but the fact is we need to override
+// any too general styles a skin may want to bring in for its own body/general display.
+@evobar-bg-color: #d2d2d2;
+@evobar-bg-color-hover: #bfbfbf;
+@evobar-text-color: #4f4f4f;
+@evobar-text-color-disabled: #999;
+@evobar-border-color: #aeaeae;
+div#evo_toolbar {
+	background-color: @evobar-bg-color;
+	color: ButtonText;
+	border-bottom: 1px solid @evobar-border-color;
+	text-align: left;
+	margin: 0;
+	font: 14px "Helvetica Neue", Helvetica, sans-serif, Arial;
+
+	position: fixed;
+	z-index: 11000;
+	left: 0px;
+	top: 0px;
+	width:100%; // Safari Windows
+	-webkit-text-size-adjust: none; // iPhone
+}
+// Devices with max width <= 1024px (iPhone,iPad):
+// Don't fix a position of the evo toolbar
+@media only screen and (max-device-width: 1024px) {
+	div#evo_toolbar {
+		position: relative;
+	}
+	div#skin_wrapper.skin_wrapper_loggedin {
+		margin-top: 0;
+	}
+}
+div.skin_wrapper_loggedin {
+	margin-top: 26px;
+	padding-top: 1px;
+}
+div#evo_toolbar {
+	.actions_left {
+		float: left;
+	}
+	.actions_right {
+		float: right;
+	}
+}
+.evobar-menu, .evobar-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: content-box;
+	-webkit-font-smoothing: antialiased;
+}
+.evobar-menu {
+	ul {
+		position: absolute;
+		top: -99999em;
+		opacity: 0;
+		width: 25ex; // left offset of submenus need to match (see below)
+		border: 1px solid @evobar-border-color;
+		box-shadow: 2px 2px 4px -1px rgba(0, 0, 0, 0.25);
+		.transition( opacity .2s ease-in-out );
+		li {
+			width: 100%;
+		}
+	}
+	> li:hover > ul {
+		opacity: 1;
+		z-index: 99;
+		top: 26px;
+	}
+	li {
+		float: left;
+		position: relative;
+		&:hover li ul {
+			top: -999em;
+		}
+		ul li:last-child a {
+			border: none;
+		}
+		li {
+			ul {
+				top: -999em;
+				left: 25ex;
+			}
+			&:hover {
+				ul {
+					top: 0;
+					opacity: 1;
+				}
+				li ul {
+					top: -999em;
+					opacity: 0;
+				}
+			}
+			li:hover ul {
+				top: 0;
+				opacity: 1;
+			}
+			a, a:hover, a:link, a:visited {
+				display: block;
+				background-color: @evobar-bg-color;
+				color: @evobar-text-color;
+			}
+			a:hover {
+				background-color: @evobar-bg-color-hover;
+			}
+		}
+		&.separator {
+			background-color: @evobar-bg-color;
+			hr {
+				border: none;
+				background-color: @evobar-text-color;
+				height: 1px;
+				margin: 10px 4px;
+			}
+		}
+		u {	// This is used to hide a part of the text on small screens
+			text-decoration: none;
+		}
+	}
+	a {
+		display: inline-block;
+		position: relative;
+		background-color: @evobar-bg-color;
+		.transition( background-color .15s ease-out );
+		padding: 6px 1ex;  // .5em need to macth global height above
+		text-decoration:none;
+		min-height: 14px;
+		line-height: 14px;
+		color: @evobar-text-color;
+		// Set one color for each link status to don't rewrite from skins
+		&:hover, &:link, &:visited {
+			color: @evobar-text-color;
+		}
+		&:hover {
+			background-color: @evobar-bg-color-hover;
+			.transition( none );
+			text-decoration: none;
+		}
+		&.disabled, &.disabled:hover {
+			color: @evobar-text-color-disabled;
+		}
+	}
+	// .evobar-icon-down, .evobar-icon-right, .evobar-icon-left
+	[class^=evobar-icon-] {
+		margin-left: 6px;
+		float: right;
+	}
+}
+// Hide several menu entries on small screens
+@media (max-width: 800px) {
+	.evobar-menu li.rwdhide,
+	.evobar-menu li u {
+		display: none;
+	}
+}
+.actions_left .evobar-menu.evobar-menu-left {
+	float: left;
+}
+.actions_right .evobar-menu {
+	> li > ul {
+		right: 0;
+	}
+	li li ul {
+		left: -25.3ex;
+		z-index: -1;
+	}
+}
+// ---------------- //
+
+// Form styles:
+// Used for action icons
+div.right_icons,
+div.fieldset_icons {
+	text-align: right;
+}
+span.right_icons,
+span.fieldset_icons {
+	float:right;
+}
+// Red star appears before label of the required labels
+span.label_field_required {
+	color: #f00;
+	font-weight: bold;
+	margin-right: 4px;
+}
+// Used to hide red star by JavaScript
+.not_required span.label_field_required {
+	display: none;
+}
+// Error fields
+span.field_error {
+	display: block;
+	color: #f00;
+}
+input.field_error,
+select.field_error,
+textarea.field_error {
+	background:#fbf2ee;
+	border: 1px solid #d99;
+}
+span.checkbox_error {
+	background: #fbf2ee;
+	border: 1px solid #d99;
+}
+span.checkbox_error input.checkbox {
+	background:#fbf2ee;
+}
+
+span.checkbox_surround {
+	background: #fbf2ee;
+	border: 1px solid #F825F1;
+}
+span.checkbox_surround input.checkbox {
+	background: #fbf2ee;
+}
+span.checkbox_surround_init {
+	padding : 1px;
+}
+// Large inputs and textareas (with full width)
+input.large,
+textarea.form_textarea_input {
+	width: 97%;
+	margin: 0;
+	display: block;
+}
+// Space between radio option lable and note text
+label.radiooption {
+	margin-right: 1em;
+}
+// ---------------- //
+
+// Messages:
+div.log_container, div.action_messages {
+	ul, ol, li {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+}
+// ---------------- //
+
+// include errors, wrong params, deleted blog, missed skin tempalte file, etc...
+div.skin_error {
+	border: 2px dotted #d99;
+	background:#fbf2ee;
+	color:#e00;
+	padding: 1em;
+	margin: 1em;
+}
+
+// Widget styles:
+// Grid table (Used on media index widget)
+table.widget_grid {
+	margin: 8px auto 1px;
+	border-collapse: separate;
+	border-spacing: 3px;
+}
+table.widget_grid td {
+	padding: 0;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	vertical-align: top;
+}
+table.widget_grid img {
+	padding: 1px;
+}
+table.widget_grid .note {
+	text-align: center;
+	padding: 2px;
+	border-top: 1px solid #ddd;
+	line-height: normal;
+	display:block;
+}
+#sidebar table.widget_grid .note {
+	margin: 0;
+}
+// Flow blocks (Used on media index widget)
+.widget_core_user_avatars .panel-body {
+	padding-bottom: 0px !important;
+	.widget_grid {
+		margin-bottom: 23px !important;
+	}
+}
+.widget_flow_blocks, table.widget_grid {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row wrap;
+	-webkit-flex-flow: row wrap;
+	justify-content: center;
+	-webkit-justify-content: center;
+	align-content: center;
+	-webkit-align-content: center;
+	align-items: center;
+	-webkit-align-items: center;
+	div {
+		margin: 3px;
+	}
+}
+.widget_flow_blocks > div img {
+	border-radius: 3px;
+}
+
+// ---------------- //
+
+// User Genders:
+.user, user.anonymous{
+	font-weight: bold;
+	word-wrap: break-word;
+}
+.user.closed,
+.user.deleted {
+	color: #666;
+}
+.user.man{
+	color: #00F;
+}
+.user.woman{
+	color: #e100af;
+}
+.user.nogender, user.anonymous.nogender{
+	color: #000;
+}
+// ---------------- //
+
+// Bubble tips:
+.bubbletip_user ul{
+	padding: 0;
+	margin: 0;
+}
+.bubbletip_user ul li{
+	margin: 0.5ex 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+.bubbletip_anon{
+	text-align: center;
+}
+.bubbletip_anon div{
+	margin-top: 5px;
+}
+// Overlay text on the bubble tips
+.bubletip_overlay_text{
+	position: relative;
+}
+.bubletip_overlay_text div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	text-shadow: -1px -1px #000, -2px 0 #000, -1px 1px #000, 0 2px #000, 1px 1px #000, 2px 0 #000, 1px -1px #000, 0 -2px #000;
+	color: #FFF;
+	font-weight: bold;
+}
+a.overlay_link:hover{
+	text-decoration: none;
+}
+a.overlay_link:hover b{
+	text-decoration: underline;
+}
+// ---------------- //
+
+// Bottom of page Debug output formatting:
+div.debug {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	border: 2px solid #000;
+	padding: 1ex;
+	background-color: #ccc;
+	text-align: left;
+	color: #000;
+}
+div.debug h2,
+div.debug h3,
+div.debug h4 {
+	color:#0033FF;
+}
+div.debug code {
+	font-family: Monaco,"Courier New", Courier, monospace;
+	font-size: 9pt;
+	margin:1ex 1ex 0;
+	display:block;
+}
+
+div.debug div.query_info {
+	background-color: #fff;
+	font-size: 12px;
+	margin:1ex;
+}
+
+div.debug table {
+	border: 1px solid #000;
+	border-collapse:collapse;
+	font-family: Monaco, "Courier New", Courier, monospace;
+	margin: 1ex;
+}
+div.debug table,
+div.debug th,
+div.debug td {
+	font-size:8pt;
+}
+div.debug th {
+	background-color: #fff;
+	border: 1px solid #000;
+	padding: 2px;
+	white-space:nowrap;
+}
+div.debug th span.type {
+	font-weight: normal;
+	color: #999;
+}
+div.debug td {
+	background-color: #ddd;
+	border: 1px solid #000;
+	padding: 2px;
+	vertical-align:top;
+	white-space:nowrap;
+}
+div.debug td.odd {
+	background-color: #eee;
+}
+// ---------------- //
+// Disp=user style fixes
+.table_scroll table.table tr td {
+	vertical-align: middle;
+	&.firstcol.shrinkwrap {
+		padding: 1px 5px;
+		a img, span img {
+			.border-radius;
+		}
+	}
+}
+// ---------------- //
+
+// AJAX Debug output formatting:
+a.jslog_switcher {
+	cursor: pointer;
+}
+div#debug_ajax_info {
+	display: none;
+	position: fixed;
+	top: 27px;
+	left: 0;
+	z-index: 100000;
+	min-width: 190px;
+	min-height : 83px;
+	opacity: 0.85;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=85);
+}
+div#debug_ajax_info.debug {
+	padding: 0;
+}
+div#debug_ajax_info h2 {
+	margin-top: 0;
+}
+div#debug_ajax_info h4 {
+	margin-bottom: 5px;
+}
+div#debug_ajax_info h4.error {
+	color: #F00;
+}
+div#debug_ajax_info p {
+	margin: 5px 0 2px 0;
+	font-weight: bold;
+}
+div#debug_ajax_info #jslog_container {
+	max-height: 500px;
+	overflow-y: auto;
+	padding: 0 10px;
+	min-height : 43px;
+}
+
+div#debug_ajax_info .jslog_titlebar, div#debug_ajax_info .jslog_statusbar {
+	padding: 1px 3px;
+}
+div#debug_ajax_info .jslog_titlebar {
+	border-bottom: 1px solid #AAA;
+	cursor: move;
+	background: #006;
+	opacity: 0.85;
+	color: #FFF;
+	font-weight: bold;
+}
+div#debug_ajax_info .jslog_statusbar {
+	border-top: 1px solid #AAA;
+	padding-right: 10px;
+}
+
+div#debug_ajax_info .ui-resizable-e {
+	right: 0;
+	z-index: 999;
+}
+div#debug_ajax_info .ui-resizable-s {
+	bottom: 0;
+	z-index: 999;
+}
+div#debug_ajax_info .ui-resizable-se {
+	z-index: 1000;
+}
+
+div.jslog {
+	display: none;
+}
+
+ul.jslog_note, ul.jslog_error {
+	padding: 0;
+	background: #DDDDDD;
+	border: 1px solid #6287C2;
+	margin: 0 auto 1ex auto;
+	padding: 1ex 1ex 1ex 3ex;
+}
+ul.jslog_error {
+	border: 1px solid #d99;
+	background: #fbf2ee;
+	color: #e00;
+}
+// ---------------- //
+
+// Item Custom Fields:
+.item_custom_fields th {
+	text-align: left;
+}
+// ---------------- //
+
+// JavaScript b2evo alert window
+.b2evo_alert {
+	width: 270px;
+	position: fixed;
+	right: 10px;
+	top: 40px;
+	background: #d64141;
+	border: 1px solid #FFF;
+	color: #FFF;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	z-index: 11000;
+}
+
+// Overlay screen (used for antispam on dashboard, for report/crop/delete user forms):
+#screen_mask{
+	position:fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+	height: 100%;
+	width: 100%;
+	display:none;
+	z-index:9998;
+}
+#overlay_wrap{
+	position: fixed;
+	top: 27px;
+	left: 50%;
+	height: 95%;
+	z-index:9999;
+	visibility: hidden;
+}
+#overlay_layout{
+	position: relative;
+	left: -50%;
+	display: table;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+}
+#overlay_page{
+	display:none;
+	visibility: visible;
+}
+#overlay_page.overlay_page_active, #overlay_page.overlay_page_active_transparent{
+	position:fixed;
+	top:40px;
+	bottom:5%;
+	right:5%;
+	left:5%;
+	overflow:auto;
+	background:#f1f6f8;
+	border:1px solid #ccc;
+	display:block;
+}
+#overlay_page.overlay_page_active_transparent{
+	background: transparent;
+	border: none;
+	margin: auto;
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	min-height: 32px;
+	top:auto;
+	bottom:auto;
+	right:auto;
+	left:auto;
+}
+#overlay_page.overlay_page_active_transparent .fieldset{
+	margin: 0;
+}
+.overlay_page_active form{
+	padding:1em;
+}
+#overlay_postback{
+	position:absolute;
+	top:-1000em;
+	left:-1000em;
+}
+#overlay_page .preview_cropped_images {
+	width: 128px;
+	text-align: center;
+}
+// ---------------- //
+
+// User links widget
+.ufld_icon_links {
+	text-align: center; 
+	// milos> Already styled with 'text-align: right;' in Starter style.less (line 7)
+	// fp> I put this back because you say 'already'. It's not 'already'. starter/style.less comes after this basic style. If we want to remove this we have to know that this style is overriden by ALL boostrap skins.
+	a {
+		text-align: center;
+	}
+}
+// --------------- //

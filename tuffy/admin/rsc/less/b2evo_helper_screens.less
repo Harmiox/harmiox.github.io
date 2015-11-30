@@ -1,0 +1,183 @@
+/* This file is used to b2evolution help pages */
+
+// Space out content a bit
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-size: 16px;
+}
+
+#content_wrapper {
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 73px; // Height of the absoluted footer
+}
+
+// Space out content a bit
+
+// Everything but the jumbotron gets side spacing for mobile first views
+.header,
+.footer {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+.header {
+	padding-top: 20px;
+}
+// Custom page footer
+.footer {
+	padding-bottom: 20px;
+	margin-top: 48px;
+	padding-top: 19px;
+	color: #777;
+	border-top: 1px solid #e5e5e5;
+}
+
+#sticky_footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	margin-left: -15px !important;
+}
+
+nav ul {
+	margin-top: 17px;
+}
+
+// Make the masthead heading the same height as the navigation
+.header h3 {
+	padding-bottom: 19px;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 40px;
+}
+
+// Customize container
+@media (min-width: 768px) {
+	.container {
+		max-width: 730px;
+	}
+}
+
+	h1, h2 {
+		padding: 20px 0 8px;
+		border-bottom: 1px solid #eee;
+	}
+
+.jumbotron {
+	text-align: center;
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 42px;
+	h2 {
+		padding-top: 0;
+	}
+	.h1_small {
+		font-size: 35px;
+	}
+}
+
+// Responsive: Portrait tablets and larger
+@media screen and (min-width: 768px) {
+	// Remove the padding we set earlier
+	.header,
+	.footer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	// Space out the masthead
+	.header {
+		border-bottom: 1px solid #e5e5e5;
+		margin-bottom: 30px;
+	}
+	.jumbotron .h1 {
+			font-size: 42px;
+	}
+}
+
+@media screen and (max-width: 541px) {
+	#content_wrapper {
+		padding-bottom: 96px; // Height of the absoluted footer
+	}
+}
+
+@media screen and (max-width: 332px) {
+	#content_wrapper {
+		padding-bottom: 119px; // Height of the absoluted footer
+	}
+}
+
+/* Sprite style for the all flags */
+/* The sprite image file is located: "/rsc/icons/flags_sprite.png"
+ * **** To change this file use the original file from: "/rsc/icons/src/flags.PSD"
+ * **** You should save the changed file as PNG-8 with 256 colors to the "flags_sprite.png"
+ * **** Also don't forget to save the "flags.PSD"
+ *
+ * NEW ADDED FLAGS:
+ *   aq - Antarctica
+ *   ax - Aland Islands
+ *   bl - Saint Barthelemy
+ *   cc - Cocos Islands
+ *   cx - Christmas Island
+ *   sj - Svalbard And Jan Mayen
+ *
+ * CHANGED FLAGS TO 16px WIDTH:
+ *   np - Nepal
+ *   ch - Switzerland
+ */
+span.flag {
+	border: 1px solid #000000;
+	background: url(../icons/flags_sprite.png) no-repeat;
+	width: 16px;
+	height: 11px;
+	line-height: 11px;
+	padding: 0 !important;
+	font-size: 6px;
+	display: inline-block !important;
+	margin-bottom: -2px;
+	box-sizing: content-box;
+}
+
+// Form of installation options
+.evo_form__install {
+	.radio {
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+	.evo_form__install_buttons {
+		margin-top: 1em;
+		.btn+.btn {
+			margin-left: 1em;
+		}
+	}
+}
+
+// Modal windows
+.modal.modal-success {
+	.modal-header {
+		color: #3c763d;
+		background-color: #dff0d8;
+		border-bottom: 1px solid #d6e9c6;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+	}
+}
+
+// Messages:
+div.action_messages ul {
+	list-style: none;
+	margin: 1ex 0;
+	padding-left: 0;
+}
+
+//New b2evo SVG logo class - needed for height/width of the SVG file
+.b2evolution_plane_logo {
+	width: 254px;
+	height: 52px;
+	margin-top: 13px;
+}
+
+.modal-dialog {
+	margin-top: 175px;
+}

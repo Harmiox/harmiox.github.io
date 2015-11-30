@@ -1,0 +1,957 @@
+/**
+ * These are the generic styles that are common to "all" skins.
+ *
+ * This is for the blog NAVIGATION and global page layout. See item_base.css for the post CONTENT styles.
+ *
+ * Override this with style.css in your skin folder.
+ */
+
+.border-radius (@radius: 4px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// MILOS > Intro posts style padding alignment
+main .well {
+	padding: 15px 15px 25px 15px;
+	header .small.text-muted {
+		margin: 4px 0px 10px 0px;
+		a {
+			color: inherit;
+		}
+	}
+}
+.post_tags {
+	margin: 15px 0px 10px 0px;
+	a {
+		display: inline-block;
+		padding: 3px 5px;
+		margin-bottom: 5px;
+		background: #eee;
+		.border-radius;
+		color: black;
+		margin-right: 3px;
+		&:before {
+			font-family: FontAwesome;
+			content: '\f02b \00a0 ';
+			color: #aaa;
+		}
+		&:hover {
+			text-decoration: none;
+			background: #ddd;
+		}
+	}
+}
+.post_comments_link {
+	margin-bottom: 10px;
+}
+
+.more_link_button {
+	margin-bottom: 10px;
+}
+
+a.permalink_right
+{
+	float: right;
+	margin: 0 0 0 1em;
+}
+
+p.baseline a.contact_link,
+a.contact_link {
+	text-decoration: underline;
+}
+
+// Calendar plugin:
+table.bCalendarTable caption {
+	font-size: 105%;
+	font-weight: bold;
+	margin: auto;
+	padding: 3px 0;
+	white-space: nowrap;
+}
+table.bCalendarTable {
+	margin: 15px auto;
+	font-size: 77%;
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+tr.bCalendarRow {
+	text-align: center;
+}
+th.bCalendarHeaderCell {
+	color: #999;
+	font-size: 84%;
+	width: 4ex;
+}
+td.bCalendarCell,
+td.bCalendarLinkPost,
+td.bCalendarEmptyCell {
+	width: 4ex;
+	padding: 2px 0;
+}
+.bCalendarLinkPost {
+	font-weight: bold;
+}
+#bCalendarToday {
+	background-color: #f6eeee;
+	border: 1px solid #900;
+	.border-radius;
+}
+
+/* TODO: not very unique IDs! (prev/next) - used in Calendar at least*/
+td#prev,
+td#next {
+	font-weight: bold;
+	font-size: 105%;
+	padding: .5ex;
+	white-space: nowrap;
+}
+td#prev a,
+td#next a {
+	padding: .5ex;
+}
+td#prev {
+	text-align:left;
+}
+td#next {
+	text-align:right;
+}
+
+
+div.powered_by {
+	margin: 16px 0;
+	text-align: center;
+}
+div.error_404,
+div.error_403,
+div.error_additional_content {
+	margin: 1em;
+}
+
+
+// Styles for comments
+.comment_recommended_option{  // ???
+	color: #0a0;
+}
+
+.evo_comment_rating {
+	margin: 3px;
+}
+.evo_comment__list_title {
+	float: left;
+}
+.evo_comment__meta_info {
+	float: right;
+	padding: 20px 0 10px 0;
+}
+// Display round avatars:
+.evo_content_block .evo_comment_avatar img {
+	margin: 4px 10px 10px 0;
+	float:left;
+	border-radius: 50%;
+}
+
+/*
+.bCommentAvatarCenter {  // This is used in tooltips for anonymous users
+	margin: 0 auto;
+	padding: 2px;
+	border:1px solid #ccc;
+}
+*/
+
+div.moderation_msg
+{
+	margin: 1ex 2ex;
+	padding: 0 1ex;
+	border: 1px dotted #fa9;
+	color: #e70;
+}
+
+div.feedback_feed_msg {
+	margin: 2em 2ex;
+	text-align: center;
+}
+
+a.comment_reply.active{
+	color: #FF0000;
+}
+a.comment_reply_current {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	color: #FF0000;
+	margin-top: 10px;
+}
+a.comment_reply_current:hover {
+	color: #0066CC;
+}
+
+.comment_notification {
+	text-align: center;
+}
+.comment_notification span {
+	vertical-align: middle;
+}
+
+// TextArea element
+textarea.form_textarea_input {
+	width: 100%;
+}
+
+.comment_viewing_disabled_msg,
+.comment_posting_disabled_msg {
+	text-align: center;
+	background-color: #fec;
+	padding: 1px;
+	margin: 4px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.evo_login_dialog_footer {
+	margin: 2em auto 1em;
+	text-align: center;
+	font-size: 78%;
+}
+.evo_login_dialog_standard_link {
+	margin: 1em;
+	text-align: center;
+}
+
+
+// Avatar widget
+div.widget_core_coll_avatar {
+	// margin-top: 1em;
+	// margin-bottom: 1em;
+	text-align:center;
+}
+
+// Search widget
+div.compact_search_form {
+	white-space: nowrap;
+}
+div.compact_search_form input.search_field {
+	width: 100px;
+	margin-right: 3px;
+}
+div.container_menu_top div.widget_core_coll_search_form {
+	float: right;
+}
+div.container_menu_top input.search_field {
+	width: 160px;	// There is typically more space here
+}
+
+// User login/register widget
+.widget_core_user_login #login_form,
+.widget_core_user_register #register_form {
+	margin-top: 5px;
+}
+.widget_core_user_login fieldset,
+.widget_core_user_register fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.widget_core_user_login .field_login_btn,
+.widget_core_user_register .field_register_btn {
+	margin: 5px 0;
+}
+.widget_core_user_login #ffield_pwd{
+	margin-top: 5px;
+}
+.widget_core_user_login .input_text,
+.widget_core_user_register .input_text {
+	width: 96%;
+}
+.widget_core_user_login .submit,
+.widget_core_user_register .submit {
+	font-size: 10px;
+}
+.widget_core_user_login .register_link {
+	font-weight: bold;
+}
+.widget_core_user_login .greeting,
+.widget_core_user_login .avatar {
+	vertical-align: middle;
+}
+.widget_core_user_login .user_group,
+.widget_core_user_login .user_level {
+	color: #999;
+}
+
+// Advertisement widget
+div.widget_core_coll_item_list.nobullets ul,
+div.widget_core_coll_item_list.nobullets ul li,
+li.widget_core_coll_item_list.nobullets ul,
+li.widget_core_coll_item_list.nobullets ul li {
+	background: none;
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+div.widget_core_coll_item_list.nobullets ul li:before,
+ul li.widget_core_coll_item_list.nobullets ul li:before {
+	content: none;
+}
+
+.action_icon {
+	margin: 0 2px;
+	font-weight: bold;
+}
+.title_action_icons {
+	float: right;
+}
+.title_action_icons a.action_icon {
+	padding-left: 5px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: normal;
+}
+
+// Ajax form
+div.section_requires_javascript p.ajax-loader {
+	text-align: center;
+	margin-top: 1em;
+}
+
+// Results table
+div.results {
+	width: 100%;
+	overflow: auto;
+}
+
+.pager { // Overrules BS original style: separates disp=single navigation links
+	margin-bottom: 16px;
+	li a {
+		margin-bottom: 4px;
+	}
+}
+
+// Rating Summary for all comments of the selected post on disp=single
+// TODO: put ALL of teh followinf into a separate .less file and @import + clean up duplicate styles in individual skins
+.evo_content_block .ratings_table {
+	margin: 0 10px 10px 0;
+	display: inline-block;
+	.rating_summary {
+		border-spacing: 1px;
+		border-collapse: separate;
+	}
+	.progress {
+		border-radius: 0;
+		height: 13px;
+	}
+}
+.evo_content_block table.rating_summary {
+	float: left;
+	margin: 0;
+	th, td {
+		border: none;
+		font-size: 10px;
+		line-height: 13px;
+		font-weight: normal;
+		padding: 0;
+	}
+	th{
+		padding-right: 5px;
+		background-color: transparent;
+	}
+	.progress {
+		width: 60px;
+		background: #eeeecc;
+		padding: 0;
+		box-shadow: none; // override bootstrap
+	}
+	.progress div{
+		background: #ffcc66;
+	}
+	td{
+		text-align: right;
+		padding-left: 5px;
+	}
+}
+div.rating_summary_total{
+	float: left;
+	padding: 5px 0 0 20px;
+}
+div.average_rating{
+	padding-top: 5px;
+}
+div.average_rating span{
+	float: left;
+	font-size: 11px;
+	line-height: 12px;
+	padding-left: 10px;
+}
+div.star_rating, div.star_rating div{
+	width: 60px;
+	height: 12px;
+	background: url(../icons/icons_sprite.png) repeat-x -64px -160px;
+	overflow: hidden;
+	text-indent: 100px;
+}
+div.star_rating div{
+	background-position: 0 -160px;
+}
+div.average_rating .star_rating{
+	float: left;
+}
+.rating_recap{
+	clear: both;
+	font-size: 10px;
+}
+.rating_recap div{
+	float: left;
+	padding-right: 10px;
+}
+// END OF TODO
+
+// Styles for in-skin editing
+form.inskin{
+	padding: 10px;
+}
+form.inskin fieldset{
+	border: none;
+	padding: 0;
+	margin: 10px 0 0;
+}
+form.inskin .edit_fieldgroup .label{
+	display: none;
+}
+form.inskin .edit_area textarea{
+	width: 100%;
+}
+
+
+// Categories selection table:
+#itemform_categories .extracats {
+	max-height: 310px;
+	overflow: auto;
+}
+table.catselect {
+	border-spacing:0;
+	width:100%;
+	border: 1px solid #bbb;
+	thead tr th {
+		padding: .3ex 1ex;
+		background-color: #d4d4d4;
+		border-bottom: 1px solid #bbb;
+		color: #333;
+	}
+	> thead:first-child > tr:first-child > th {
+		border-top: 1px solid #bbb;
+	}
+	td {
+		padding: .2ex 1ex;
+		background: none;
+	}
+	tr.group td {
+		border-top: 1px solid #bbb;
+		border-bottom: 1px solid #bbb;
+		font-weight: bold;
+	}
+	tr.odd, tr.odd input {
+		background-color: #eee;
+	}
+	tr.even, tr.even input {
+		background: none !important;
+	}
+	th.selector, td.selector {
+		width: 1%;
+		text-align:center;
+		border-right: 1px solid #bbb;
+	}
+	#new_category_name {
+		background-color: white;
+		width: 92% !important;
+	}
+	tbody tr.group.catselect_blog__current td {
+		background: #31b0d5;
+		color: #FFF;
+	}
+	.catsel_name label {
+		font-weight: normal;
+	}
+}
+
+// Raty icons (stars)
+.raty_star_on, .raty_star_off, .raty_cancel_on, .raty_cancel_off {
+	background: url(../icons/icons_sprite.png) no-repeat 0 -208px;
+	width: 16px;
+	height: 16px;
+	display: inline-table;
+}
+.raty_star_off {
+	background-position: -16px -208px;
+}
+.raty_cancel_on {
+	background-position: -32px -208px;
+}
+.raty_cancel_off {
+	background-position: -48px -208px;
+}
+
+div.item_location {
+	margin: 1ex 0;
+}
+
+#ProfileForm {
+	position: relative;
+	min-height: 180px;
+}
+.profile_pictured_fieldsets {
+	min-height: 130px;
+	padding-right: 170px; /* leave space for the profile picture */
+}
+
+// Table groups of contacts in disp=users
+.user_contacts_groups th {
+	font-weight: normal;
+	font-style: italic;
+}
+.user_contacts_groups td, .user_contacts_groups th {
+	vertical-align: top;
+	padding: 0 0 0 4px;
+}
+.user_contacts_groups td {
+	white-space: nowrap;
+}
+.user_contacts_groups br {
+	clear: both;
+}
+.user_contacts_groups .col1 {
+	padding: 0 4px 0 0;
+	border-right: 2px solid #666;
+}
+.user_contacts_groups table{
+	width: 100%;
+}
+.user_contacts_groups table th {
+	padding: 0 0 0 8px;
+	text-align: left;
+	font-style: normal;
+}
+.user_contacts_groups table td {
+	width: 13px;
+	padding: 0;
+	font-style: normal;
+}
+
+.user_contacts_groups .col1 table th {
+	padding: 0 8px 0 0;
+}
+
+#edit_group_contacts {
+	margin-top: 1em;
+	border: 1px solid #BBB;
+	background: #D4D4D4;
+	padding: 0 5px 5px 5px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+#edit_group_contacts label{
+	padding-right: 5px;
+}
+
+// jQuery Tokeninput plugin
+#ffield_item_tags ul.token-input-list-facebook {
+	width: 100%;
+}
+
+// Not published comments display
+.evo_content_block span[class*=status_] {
+	background: transparent;
+	width: 75px;
+	height: 75px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.note.status_draft span,		// This is deprecated
+.evo_status__draft {				// This is clean
+	color: #000 !important;
+	background-color: #ff9 !important;
+}
+.note.status_review span,		// This is deprecated
+.evo_status__review {			// This is clean
+	color: #fff !important;
+	background-color: #CC0099 !important;
+}
+.note.status_community span,	// This is deprecated
+.evo_status__community {		// This is clean
+	color: #fff !important;
+	background-color: #2E8BB9 !important;
+}
+.note.status_protected span,	// This is deprecated
+.evo_status__protected {		// This is clean
+	color: #fff !important;
+	background-color: #FF9C2A !important;
+}
+.note.status_private span,		// This is deprecated
+.evo_status__private {			// This is clean
+	color: #fff !important;
+	background-color: #DC143C !important;
+}
+.note.status_published span,	// This is deprecated
+.evo_status__published {		// This is clean
+	color: #000 !important;
+	background-color: #99EE44 !important;
+}
+.note.status_deprecated span,	// This is deprecated
+.evo_status__deprecated {		// This is clean
+	color: #fff !important;
+	background-color: #000 !important;
+}
+.note.status_redirected span,	// This is deprecated
+.evo_status__redirected {		// This is clean
+	color: #fff !important;
+	background-color: #663399 !important;
+}
+.note.status_trash span,		// This is deprecated
+.evo_status__trash {				// This is clean
+	color: #fff !important;
+	background-color: #f66 !important;
+}
+.note.status_meta span,			// This is deprecated
+.evo_status__meta {				// This is clean
+	color: #fff !important;
+	background-color: #5133ab !important;
+}
+
+.evo_content_block span[class*=status_] span {
+	display: block;
+	width: 120px;
+	text-align: center;
+	padding: 3px 0;
+	position: relative;
+	font-size: 9pt;
+	top: 15px;
+	left: -12px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; /* IE8 */
+}
+
+div.results .status_draft span,
+div.results .status_review span,
+div.results .status_community span,
+div.results .status_protected span,
+div.results .status_private span,
+div.results .status_published span,
+div.results .status_deprecated span,
+div.results .status_redirected span,
+div.results .status_trash span,
+div.results .status_meta span {
+	text-align: center;
+	padding: 3px 0;
+	font-size: 11px;
+	font-weight: bold;
+	border: 1px solid #FFFFFF;
+	border-radius: 12px 12px 12px 12px;
+	float: left;
+	width: 80px;
+}
+
+@fix-IE8-media-screen: ~"\0screen";
+@media @fix-IE8-media-screen {/* IE8 */
+	.evo_content_block span[class*=status_] span {
+		top: -15px;
+		left: -2px;
+	}
+}
+
+.search_title {
+	font-size: 125%;
+}
+.search_title a {
+	text-decoration: underline;
+}
+.search_result {
+	padding: 15px 15px 5px;
+}
+.search_result_score {
+	float: left;
+	width: 40px;
+	font-size: 100%;
+	line-height: 27px;
+}
+.search_content_wrap {
+	margin-left: 40px;
+}
+.search_score_map {
+	margin-left: 55px;
+}
+
+.track_content {
+	margin: 5px;
+}
+
+// Visibility of status banners and buttons depending on comment status
+// It is used for example on forums skins where we use AJAX to change a comment status.
+//     On AJAX success result we change only a visibility of the status banners and buttons
+//     and we do NOT reload a comment content
+.vs_published,
+.vs_community,
+.vs_protected,
+.vs_private,
+.vs_review,
+.vs_draft {
+	.evo_status {
+		// Hide all status banners by default in order to show only current
+		display: none;
+	}
+	a.btn[class*='btn_lower_status_'], a.btn[class*='btn_raise_status_'] {
+		// Hide all status buttons by default
+		display: none;
+		&.btn_next_status {
+			// Make visible only the active buttons (for previous and next allowed statuses)
+			display: inline-block;
+		}
+	}
+}
+.vs_published .evo_status__published,
+.vs_community .evo_status__community,
+.vs_protected .evo_status__protected,
+.vs_private .evo_status__private,
+.vs_review .evo_status__review,
+.vs_draft .evo_status__draft {
+	// Make visible banner status only of the current status
+	display: block;
+}
+
+// Photo Index widget
+.evo_image_index {
+	margin: 1ex auto;
+	text-align: center;
+}
+.evo_image_index div {
+	display: inline-block;
+	background: #DDD;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #999;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border-radius: 2px;
+	padding: 2px;
+	margin: 2px 2px 1px 1px;
+}
+.evo_image_index div:hover {
+	background: #EEE;
+}
+.evo_image_index div span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.form_add_contacts .controls {
+	white-space: nowrap;
+	padding-left: 31px;
+	display: inline-block;
+}
+
+// Comment edit form:
+form#comment_edit {
+	clear: both;
+}
+
+// Remove padding around attachment frame:
+#post_attachments, #comment_attachments {
+	.panel-body {
+		padding: 0;
+	}
+}
+
+input.btn-lg {
+	font-size: 120%;
+}
+
+#download_timer_js, #download_info_nojs {
+	font-size: 84%;
+	background: #CCC;
+	padding: 3px 5px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+
+// Profile page:
+.profile_content {
+	max-width: 960px;
+	margin: auto;
+}
+.main_profile_picture {
+	.border-radius;
+}
+.other_profile_pictures {
+	margin-bottom: 10px;
+	img {
+		.border-radius;
+	}
+}
+.profile_column_left {
+	float: left;
+	width: 300px;
+	max-width: 300px;
+}
+.profile_column_right {
+	margin-left: 320px;
+	#fieldset_user_fields {
+		overflow: hidden;
+	}
+}
+.profile_buttons {
+	.btn, .btn-group {
+		width: 100%;
+	}
+	.btn-group .btn {
+		width: 50%;
+	}
+	a.btn button {
+		background: none;
+		border: none;
+		padding: 0;
+	}
+}
+.profile_column_right legend.panel-heading {
+	padding: 10px 15px;
+}
+@media (max-width: 1199px) {
+	.profile_content {
+		.col-sm-3 {
+			width: 35%;
+		}
+		.col-sm-9 {
+			width: 65%;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.profile_column_left {
+		margin: 0 auto;
+		float: none;
+		width: 100%;
+		.loadimg {
+			width: 100%;
+		}
+	}
+	.profile_column_right {
+		margin-left: 0;
+		width: 100%;
+		float: left;
+	}
+	.evo_comment .panel-title.pull-right { // On BS Blog skin aligns items in comments > panel-title
+		float: none !important;
+		clear: both;
+	}
+}
+@media (max-width: 375px) {
+	.evo_form .control-buttons .submit, .evo_form .control-buttons .preview { // Separates form buttons on low resolution when they are not inline
+		margin-bottom: 4px;
+	}
+}
+
+// Standard style for all tables of content:
+.evo_content_block table {
+	margin: 1em 0;
+	th {
+		border: 1px solid #ddd;
+		padding: 8px;
+		background-color: #eee;
+	}
+	td {
+		border: 1px solid #ddd;
+		padding: 8px;
+		vertical-align: top;
+	}
+}
+
+// Fix the form elements:
+.evo_form__comment {
+	.panel {
+		margin: 0;
+		border: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		.panel-body {
+			padding: 0;
+		}
+	}
+	.panel-body .alert {
+		&.alert-primary, &.alert-success, &.alert-info, &.alert-warning, &.alert-danger {
+			margin: 0px;
+			padding: 10px 15px;
+		}
+	}
+	.bg-warning {
+		margin: 0px !important;
+	}
+}
+.form-horizontal {
+	.form-group, .custom_content {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	fieldset {
+		margin-top: 0;
+	}
+	input[type=file] {
+		display: inline;
+	}
+}
+#comment_date_field {
+	input {
+		width: 80px;
+	}
+	label {
+		font-weight: normal;
+	}
+}
+.form-group[id^="ffield_uploadfile"] .controls {
+	padding-top: 5px;
+	input {
+		line-height: 10px;
+	}
+}
+
+// Comment template:
+.comment_rating {
+	margin-top: 2px;
+}
+#comment_edit .comment_rating {
+	margin-top: 9px;
+}
+#comment_preview {
+	background-color: #FFF;
+}
+#comment_date_field .panel {
+	border: none;
+	box-shadow: none;
+	margin-bottom: 0;
+	.panel-body {
+		padding: 0;
+		.control-label {
+			font-weight: bold;
+		}
+		.controls .form-group {
+			display: inline-block;
+			padding-left: 15px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Images gallery:
+.evo_post_gallery__image {
+	display: inline-block;
+	margin: 0 1em 1em 0;
+}

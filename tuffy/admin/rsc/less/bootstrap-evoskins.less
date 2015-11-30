@@ -1,0 +1,937 @@
+/* This file is used to fix the style issues on all bootstrap skins of b2evolution */
+
+.border-radius (@radius: 4px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// Fix for forms
+// We want this only on Small devices and up(tablets, 768px and up)
+// We DON'T want this when labels are stacked
+@media (min-width: 768px) {
+	div.radio:last-of-type,
+	div.checkbox:last-of-type {
+		padding-bottom: 7px;
+	}
+}
+
+// Don't rewrite a font family of glyph icons
+.glyphicon {
+	font-family: 'Glyphicons Halflings' !important;
+}
+
+ul, ol {
+	margin: 0 0 10px 25px;
+	padding: 0;
+}
+
+// Use yellow color on hover table rows intead of grey standard color:
+.table-hover > tbody > tr:hover {
+	background-color: #ffc;
+}
+
+// Custom styles for buttons
+.btn {
+	&.btn-success, &.btn-danger {
+		.fa {
+			// Use only white icons in color buttons
+			color: #FFF !important;
+		}
+	}
+}
+
+// Keep almost same style for active disabled buttons (used by TinyMCE plugin)
+.btn.active[disabled] {
+	opacity: 1;
+	color: #333;
+	background: #e6e6e6;
+	border-color: #adadad;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+					box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+// Make action icon normal font style
+a.btn.action_icon {
+	font-weight: normal;
+	text-decoration: none;
+	&.hoverlink {
+		text-decoration: none;
+	}
+}
+
+// Style of bootstrap form
+.form-horizontal {
+	.form-group, .custom_content {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.control-label {
+		padding-left: 0;
+	}
+	.form-control-inline {
+		display: inline-block;
+		width: auto;
+	}
+	// Info field that uses full width
+	.info_full {
+		padding: 0 20px;
+		.control-label {
+			width: auto;
+			padding: 0;
+		}
+		.controls-info {
+			margin: 0 5px;
+		}
+	}
+	// Part after label where input elements
+	.controls {
+		padding-left: 0;
+		padding-right: 0;
+		.help-inline {
+			color: #999;
+			font-size: 84%;
+		}
+		.form-control {
+			display: inline-block;
+			width: auto;
+			max-width: 100%;
+		}
+		span.help-inline {
+			a.btn {
+				margin-top: -5px;
+			}
+		}
+		// Every textareas and spec inputs should be full width
+		input.large, textarea.form_textarea_input {
+			width: 100%;
+		}
+	}
+	.radio-group .controls > .help-inline {
+		padding-top: 10px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.field_inline label {
+		width: auto;
+		input {
+			width: auto;
+			display: inline-block;
+		}
+	}
+	.field_wide {
+		label {
+			width: 100%;
+			text-align: left;
+		}
+		.controls {
+			margin-left: 40px;
+		}
+	}
+	// Form layout "linespan"
+	div.tile, div.tile label {
+		display: inline-block;
+		white-space: nowrap;
+	}
+	input[type=radio], input[type=checkbox] {
+		display: inline-block;
+	}
+	.control-buttons {
+		padding-left: 0;
+	}
+	// Don't use bold for radio/checkbox text
+	label.radio-inline {
+		font-weight: normal;
+	}
+	div.radio, div.checkbox {
+		label {
+			font-weight: normal;
+		}
+	}
+	// Fix for text input elements that go after radio inputs on one line
+	div.radio label .form_text_input {
+		vertical-align: top;
+		margin-left: 7px;
+	}
+	// Table on the edit post form where Title/Language  & Advanced Properties are located
+	.compose_layout {
+		margin-bottom: 15px;
+		td {
+			padding: 0 2px 2px 0;
+			vertical-align: middle;
+		}
+		th.label, td.label {
+			display: table-cell;
+			color: #333;
+			font-size: 100%;
+			label {
+				margin: 0;
+			}
+		}
+		td.input div.tile label.control-label {
+			display: none;
+		}
+	}
+	// Select category table on edit post form
+	#itemform_categories {
+		.panel-body.extracats {
+			padding: 0;
+			table.table {
+				margin: 0;
+				border: none;
+			}
+		}
+	}
+	// Properties block on edit post form
+	#itemform_edit_timestamp > input[type=text] {
+		display: inline-block;
+		width: auto;
+	}
+	#itemform_extra, #itemform_edit_timestamp {
+		#itemform_edit_timestamp {
+			padding: 10px 0;
+		}
+		label {
+			padding-left: 20px;
+			margin-right: 5px;
+			position: relative;
+			input[type=radio] {
+				margin: 4px 0 0;
+				position: absolute;
+				left: 0;
+			}
+		}
+		.form-group {
+			display: inline-block;
+			margin: 0 0 2px;
+			input[type=text] {
+				max-width: 85px;
+			}
+		}
+		td {
+			vertical-align: middle;
+			padding-right: 5px;
+		}
+	}
+	// Text Renderers block on edit post form
+	#itemform_renderers {
+		div[id^="block_renderer_"] {
+			padding-left: 20px;
+			position: relative;
+			input[type=checkbox] {
+				margin: 4px 0 0;
+				position: absolute;
+				left: 0;
+			}
+		}
+	}
+	// Fix wrong height for radio and checkbox inputs
+	input.checkbox, input.radio {
+		min-height: 0;
+	}
+}
+// Inline form (E.g. filters of the Results table)
+.form-inline {
+	.form-control {
+		display: inline-block;
+		width: auto;
+		&.large {
+			width: 97%;
+		}
+	}
+	.form-group, #criteria_type_A2 {
+		margin-top: 2px;
+		&.large {
+			width: 100%;
+		}
+	}
+}
+// Fix password fields and indicator on register forms
+#register_form {
+	div#ffield_m {
+		margin-bottom: 4px;
+	}
+	div#p-status {
+		margin-left: 5px;
+	}
+	#pass2_status .icon {
+		margin-top: -2px;
+	}
+	// make password indicator scaleable on small screens
+	#p-container {
+		max-width: 100%;
+	}
+	input[name^="captcha_qstn_"] {
+		width: 250px;
+	}
+}
+// Fix aligment
+select#report_user_status {
+	margin-top: -7px;
+}
+
+// Form with fixed label width:
+.fixedform-group {
+	.fixedform-label {
+		clear: both;
+		float: left;
+		width: 150px;
+	}
+	.fixedform-controls {
+		margin-left: 165px;
+	}
+}
+@media (max-width: 639px) {
+	.fixedform-group {
+		.fixedform-label {
+			clear: both;
+			float: none;
+			width: 100%;
+		}
+		.fixedform-controls {
+			margin-left: 0;
+		}
+	}
+}
+
+// Used to set a font size of action icons to normal view
+a.action_icon {
+	font-size: 12px;
+}
+
+// jQuery plugin "jquery.tokeninput.js" (helps to select the recipients for thread)
+form ul.token-input-list-facebook {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	background-color: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+					box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+			 -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+					transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	.border-radius;
+	padding: 4px 4px 0 4px;
+	&.token-input-list-error {
+		background: #fbf2ee;
+		border: 1px solid #d99;
+	}
+	input, input:focus {
+		box-shadow: none;
+	}
+	li {
+		font: inherit;
+		height: 24px;
+		input {
+			padding: 2px 0 1px 0;
+		}
+		&.token-input-token-facebook, &.token-input-input-token-facebook {
+			.border-radius;
+			margin: 0 4px 4px 0;
+		}
+	}
+}
+
+// Results table
+div.results {
+	margin-top: 0;
+	div.table_scroll {
+		overflow: auto;
+		width: 100%;
+	}
+	.table-bordered {
+		border-left: none;
+		border-right: none;
+		td.firstcol, th.firstcol {
+			border-left: none;
+		}
+		td.lastcol, th.lastcol {
+			border-right: none;
+		}
+		th {
+			border-bottom: none;
+		}
+	}
+	.page_size_selector {
+		margin-bottom: 5px;
+		display: block;
+		select.form-control {
+			display: inline-block;
+			width: auto;
+		}
+	}
+	.pagination {
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+// Filters in results table
+div.filters {
+	margin-bottom: 0;
+	background: none;
+	border: none;
+	> div {
+		margin-left: 0;
+	}
+	// Align a filter button to the right
+	button.filter {
+		float: right;
+		padding: 4px 12px;
+	}
+	// Set vertical spaces between the filter inputs
+	.block {
+		display: inline-block;
+		margin: 2px;
+	}
+	&.panel-body {
+		padding: 15px;
+	}
+}
+.table_scroll .table {
+	margin-bottom: 0;
+}
+div.messages{
+	border-bottom: 1px solid #bbb;
+}
+
+// Popover
+.popover {
+	color: #333;
+	&.right {
+		text-align: left;
+		&.popover-userfield {
+			// Shift a popover window to the right on 35px to don't hide a plus icon
+			margin-left: 35px !important;
+			cursor: pointer;
+		}
+	}
+	p {
+		margin: 10px 0 0 0;
+	}
+}
+
+// Glyphicons
+.glyphicon {
+	font-size: 12px;
+	color: #428BCA;
+}
+a:hover .glyphicon {
+	color: #2A6496;
+}
+.glyphicon:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+// The voting panel of pictures
+#colorbox #cboxVoting {
+	label {
+		display: inline;
+		font-size: 10px !important;
+		line-height: 0;
+		margin: 0;
+		input {
+			margin-top: 0;
+		}
+	}
+}
+
+// Make a label inline
+#itemform_renderers, #itemform_edit_timestamp, table.catselect {
+	label {
+		display: inline-block;
+		margin-right: 5px;
+		input {
+			margin: 0 2px 4px 0;
+		}
+	}
+}
+
+// Navigation menu
+.nav {
+	margin: 20px 0;
+}
+.well {
+	background: #F5F5F5;
+	.nav {
+		padding: 0 15px;
+		margin: 0;
+		li > a {
+			padding: 3px 15px;
+			margin: 0 -15px;
+		}
+		.active > a, .active > a:hover {
+			background-color: #0088CC;
+			color: #FFFFFF;
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+// Highlight the required fields
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+	color: #b94a48;
+	border-color: #ee5f5b;
+}
+input:focus:invalid:focus,
+textarea:focus:invalid:focus,
+select:focus:invalid:focus {
+	border-color: #e9322d;
+	-webkit-box-shadow: 0 0 6px #f8b9b7;
+	-moz-box-shadow: 0 0 6px #f8b9b7;
+	box-shadow: 0 0 6px #f8b9b7;
+}
+#login_form {
+	input:focus:invalid:focus,
+	textarea:focus:invalid:focus,
+	select:focus:invalid:focus {
+		border-color: #66afe9;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+		-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	}
+}
+
+// Panels
+.panel-heading {
+	h4 {
+		margin: 0;
+	}
+	.close {
+		position: relative;
+		top: -4px;
+	}
+	.btn {
+		margin: -6px 0 0 6px;
+	}
+	.btn-group {
+		margin-left: 6px;
+	}
+}
+legend.panel-heading {
+	font-size: 16px;
+	font-weight: normal;
+	margin-bottom: 0;
+	a.action_icon.pull-right {
+		line-height: 16px;
+		span.fa {
+			position: relative;
+			top: 1px;
+		}
+	}
+}
+.panel-title {
+	.icon {
+		vertical-align: middle;
+		position: relative;
+		top: -1px;
+	}
+	a.help_plugin_icon {
+		color: #337ab7;
+		&:hover {
+			color: #23527c;
+		}
+	}
+}
+
+// Title of confirmation block to delete DB object
+.evo_confirm_delete__title {
+	margin-top: 0;
+}
+
+// Form to add contacts
+.form_add_contacts {
+	display: block;
+	padding: 5px 0 20px 0;
+	.label {
+		color: #333;
+		font-size: 100%;
+		padding-left: 0;
+	}
+	.controls {
+		padding-left: 0;
+	}
+	.control-label {
+		width: auto;
+		padding-top: 2px;
+		padding-left: 0;
+		line-height: 24px;
+		span.fa {
+			top: -2px !important;
+			left: -5px;
+		}
+	}
+	.form-control {
+		display: inline-block;
+		width: auto;
+	}
+}
+.form_send_contacts {
+	span.fa {
+		top: -2px !important;
+		left: -5px;
+	}
+}
+.panel-body #ffield_contact_groups {
+	label {
+		white-space: nowrap;
+	}
+	.contact_group_new input[type=checkbox] {
+		margin-top: 12px;
+	}
+}
+
+.form-horizontal .controls {
+	input.large,
+	.form-control.form_textarea_input {
+		display: block;
+	}
+}
+
+// Plugin toolbars
+div.edit_toolbars {
+	margin-top: 5px;
+	text-align: left;
+}
+div.edit_toolbars, div.message_toolbars {
+	line-height: 1;
+}
+.btn-toolbar[class*="_toolbar"] {
+	display: inline-block;
+	margin: 0 2px 0 0;
+	line-height: 1.42857143;
+	background-color: #f5f5f5;
+	.border-radius;
+	padding: 2px 2px 0 2px;
+	.btn-group:first-child {
+		margin-left: 0;
+	}
+	.btn {
+		margin-bottom: 2px;
+	}
+	.btn-toolbar-title {
+		padding-left: 5px;
+		float: left;
+		font-weight: bold;
+	}
+	&.disabled span.btn {
+		opacity: 0.5;
+		cursor: default;
+		&:hover {
+			background: #FFF;
+		}
+	}
+}
+// Plugin buttons
+.edit_plugin_actions {
+	padding-top: 7px;
+}
+
+// Badge
+.badge-important {
+	background-color: #F00 !important;
+	color: #FFF !important;
+}
+.badge-info {
+	background-color: #5bc0de !important;
+	color: #FFF !important;
+}
+.badge-warning {
+	background-color: #f0ad4e !important;
+	color: #fff !important;
+}
+.badge-meta {
+	background-color: #5133ab !important;
+	color: #fff !important;
+}
+.dropdown-menu > li > a .tooltip {
+	white-space: normal;
+}
+.panel-heading .badge {
+	position: relative;
+	top: -1px;
+}
+.evobar-menu .badge {
+	font-weight: normal;
+	padding: 3px 7px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.nav .badge {
+	font-weight: normal;
+}
+
+// Fix colorbox sizes
+#colorbox,
+#colorbox *,
+#colorbox *:before,
+#colorbox *:after {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+// Modal windows
+.modal {
+	z-index: 10001; // to be over sitewide header
+}
+.modal-backdrop {
+	position: fixed;
+}
+.modal-dialog {
+	// Set this for all screen sizes(especially for small screens) in order to fix a moving modal over evo_toolbar
+	margin: 30px auto;
+}
+
+// Typeahead plugin
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	.border-radius(8px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	padding: 8px 0;
+	.tt-suggestion {
+		font-size: 18px;
+		line-height: 24px;
+		padding: 3px 20px;
+		&.tt-cursor {
+			background-color: #0097CF;
+			color: #FFFFFF;
+		}
+		p {
+			margin: 0;
+		}
+	}
+}
+
+// Fix font-size for jumbotron blocks
+.jumbotron {
+	font-size: 21px;
+	font-weight: 200;
+}
+
+// Colors for statuses of posts and comments
+@status_color_draft:            #ff9;
+@status_color_draft_hover:      #f3f392;
+@status_color_review:           #CC0099;
+@status_color_review_hover:     #c20092;
+@status_color_community:        #2E8BB9;
+@status_color_community_hover:  #2c84b0;
+@status_color_protected:        #FF9C2A;
+@status_color_protected_hover:  #f39528;
+@status_color_private:          #DC143C;
+@status_color_private_hover:    #d21339;
+@status_color_published:        #99EE44;
+@status_color_published_hover:  #92e341;
+@status_color_deprecated:       #000;
+@status_color_deprecated_hover: #333;
+@status_color_redirected:       #663399;
+@status_color_redirected_hover: #613192;
+@status_color_trash:            #f66;
+@status_color_trash_hover:      #f44;
+@status_color_meta:             #5133ab;
+
+// Status colors:
+.status_color_draft {
+	color: @status_color_draft;
+}
+.status_color_review {
+	color: @status_color_review;
+}
+.status_color_community {
+	color: @status_color_community;
+}
+.status_color_protected {
+	color: @status_color_protected;
+}
+.status_color_private {
+	color: @status_color_private;
+}
+.status_color_published {
+	color: @status_color_published;
+}
+.status_color_deprecated {
+	color: @status_color_deprecated;
+}
+.status_color_redirected {
+	color: @status_color_redirected;
+}
+.status_color_trash {
+	color: @status_color_trash;
+}
+.status_color_meta {
+	color: @status_color_meta;
+}
+
+// Buttons for the post statuses
+.btn[class*=btn-status-] {
+	border: 1px solid #ccc;
+}
+.btn-status-draft {
+	color: #000;
+	background-color: @status_color_draft;
+	border-color: #dfdfdf;
+}
+.btn-status-draft:hover {
+	color: #000;
+	background-color: @status_color_draft_hover;
+}
+.btn-status-review {
+	color: #fff;
+	background-color: @status_color_review;
+}
+.btn-status-review:hover {
+	color: #fff;
+	background-color: @status_color_review_hover;
+}
+.btn-status-community {
+	color: #fff;
+	background-color: @status_color_community;
+}
+.btn-status-community:hover {
+	color: #fff;
+	background-color: @status_color_community_hover;
+}
+.btn-status-protected {
+	color: #fff;
+	background-color: @status_color_protected;
+}
+.btn-status-protected:hover {
+	color: #fff;
+	background-color: @status_color_protected_hover;
+}
+.btn-status-private {
+	color: #fff;
+	background-color: @status_color_private;
+}
+.btn-status-private:hover {
+	color: #fff;
+	background-color: @status_color_private_hover;
+}
+.btn-status-published {
+	color: #000;
+	background-color: @status_color_published;
+	.glyphicon {
+		color: inherit !important;
+	}
+}
+.btn-status-published:hover {
+	color: #000;
+	background-color: @status_color_published_hover;
+}
+.btn-status-deprecated {
+	color: #fff;
+	background-color: @status_color_deprecated;
+}
+.btn-status-deprecated:hover {
+	color: #fff;
+	background-color: @status_color_deprecated_hover;
+}
+.btn-status-redirected {
+	color: #fff;
+	background-color: @status_color_redirected;
+}
+.btn-status-redirected:hover {
+	color: #fff;
+	background-color: @status_color_redirected_hover;
+}
+.btn-status-trash {
+	color: #fff;
+	background-color: @status_color_trash;
+}
+.btn-status-trash:hover {
+	color: #fff;
+	background-color: @status_color_trash_hover;
+}
+
+// Fix label width on TinyMCE modal windows
+.mce-container label.mce-label {
+	max-width: none;
+}
+
+// Make rounded corners for all images in content
+.evo_content_block {
+	img {
+		.border-radius;
+	}
+	/*
+	a.user img { // bubbletip
+		.border-radius(0);
+	}
+	*/
+}
+
+// User links widget
+.ufld_icon_links a {
+	display: inline-block;
+	text-decoration: none;
+	color: #FFF;
+	background: #ddd;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	margin: 2px;
+	position: relative;
+	-webkit-transition: border-radius 250ms ease-out, background-color 250ms ease-out;
+	-moz-transition: border-radius 250ms ease-out, background-color 250ms ease-out;
+	-o-transition: border-radius 250ms ease-out, background-color 250ms ease-out;
+	transition: border-radius 250ms ease-out, background-color 250ms ease-out;
+	&:hover {
+		.border-radius;
+		color: #FFF;
+		background: #23527c;
+		// TODO: use @variable name
+	}
+	.fa {
+		font-size: 20px;
+		line-height: 40px;
+		display: block;
+	}
+}
+
+// Messages list & form
+.evo_private_messages_list {
+	.messages_navigation {
+		padding: 5px;
+	}
+	> h2 {
+		margin-top: 0;
+	}
+	.messages_list_actions {
+		text-align: center;
+		padding: 10px 0;
+		p {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		a {
+			display: inline-block;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	span.error {
+		border: 1px solid #BBB;
+		border-bottom: none;
+		padding: 10px;
+		text-align: center;
+		display: block;
+	}
+	.panel {
+		margin-bottom: 0;
+		&.results {
+			margin-bottom: 20px;
+		}
+	}
+}
