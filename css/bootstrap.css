@@ -1,6 +1,22 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.behaveBookBtn {
+    position: absolute;
+    right: 12px;
+    top: -30px;
+    color: #fff !important;
+    background-color: #a62f2f;
+    border-top: 2px solid #8c2828;
+    border-right: 2px solid #8c2828;
+    border-left: 2px solid #8c2828;
+    border-radius: 2px;
+    padding: 5px;
+}
+.behaveBookBtn a:link {
+    color: #fff;
+    text-decoration: none;
+}
 /* HOW TO - BOOK PAGE */
 /* expanding input CSS only */
 #myInput		{width:130px}
