@@ -51,7 +51,7 @@ img.desktopLogo {
 body {
     padding-bottom: 40px;
     color: #fff !important;
-    background-color: #333 !important;
+    background-image: url(img/shattered.png);
 }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
