@@ -1,6 +1,15 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+div.navbar-wrapper.behaveNav {
+    margin-top: 60px !important;
+}
+img.desktopLogo {
+    height: 200px;
+    position: relative;
+    top: -60px;
+}
+
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
