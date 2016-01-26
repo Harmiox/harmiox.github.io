@@ -1,6 +1,9 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.behaveTimeline {
+    margin: 0px 10px 0px 10px;
+}
 .behaveBookBtn {
     position: absolute;
     right: 12px;
@@ -309,7 +312,7 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 400px;
+  height: 225px;
   background-color:#555;
 }
 .carousel img {
