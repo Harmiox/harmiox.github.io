@@ -117,7 +117,8 @@
   top: 16px;
   left: 50%;
   margin-left: -25px;
-  background-color: #999999;
+    padding-top: 4px;
+  background-color: #a62f2f;
   z-index: 100;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
@@ -222,6 +223,7 @@ hr.featurette-divider.topDivider {
 }
 footer {
     color: #333;
+    padding: 5px;
 }
 hr.featurette-divider {
     border-top: 3px solid #a62f2f !important;
