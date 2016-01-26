@@ -1,6 +1,12 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.navbar-right {
+    margin-right: -5px !important;
+}
+navSocial {
+    margin-right: -15px;
+}
 a.btn.btn-lg.btn-primary {
     background-color: #a62f2f !important;
     border-color: #8c2828 !important;
