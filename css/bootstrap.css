@@ -1,6 +1,9 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+a.navbar-brand.hidden-md.hidden-lg.behaveName {
+    font-family: 'Sigmar One', cursive;
+}
 div.navbar-wrapper.behaveNav {
     margin-top: 60px !important;
 }
