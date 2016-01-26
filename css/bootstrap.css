@@ -1,6 +1,9 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+footer {
+    color: #333;
+}
 hr.featurette-divider {
     border-top: 3px solid #a62f2f !important;
 }
@@ -1277,7 +1280,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #a62f2f;
   text-decoration: none;
 }
 a:hover,
