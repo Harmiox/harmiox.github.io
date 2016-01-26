@@ -251,9 +251,6 @@ div.row.behaveRow {
     background-color: #fff;
     color: #333 !important;
 }
-.text-muted {
-    color: #a62f2f !important;
-}
 .navbar-right {
     margin-right: 15px !important;
 }
@@ -1741,7 +1738,8 @@ mark,
   text-transform: capitalize;
 }
 .text-muted {
-  color: #777;
+    color: #a62f2f;
+    font-size: 18px;
 }
 .text-primary {
   color: #337ab7;
