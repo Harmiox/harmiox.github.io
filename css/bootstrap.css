@@ -1507,6 +1507,7 @@ a {
   text-decoration: none;
 }
 a:hover,
+/** Link Change **/
 a:focus {
   text-decoration: none;
 }
