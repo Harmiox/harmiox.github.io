@@ -6,7 +6,7 @@ hr.featurette-divider.btmDivider {
 }
 hr.featurette-divider.topDivider {
     margin-top: 0px !important;
-    margin-bottom: 0px !important;
+    margin-bottom: 60px !important;
 }
 footer {
     color: #333;
@@ -28,10 +28,13 @@ a.btn.btn-default.behavePointBtn {
 div.col-md-4.text-center.behavePoint {
     margin-bottom: 25px;
 }
+div.row.behaveRow.behaveCar {
+    background: none;
+}
 div.row.behaveRow {
     margin-right: 2px !important;
     margin-left: 1px !important;
-    background-color: #fff !important;
+    background-color: #fff;
     color: #333 !important;
 }
 .text-muted {
