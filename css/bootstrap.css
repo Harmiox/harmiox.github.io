@@ -1,6 +1,9 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+hr.featurette-divider {
+    border-top: 3px solid #a62f2f !important;
+}
 .carousel  {
     margin-bottom: 35px !important;
 }
@@ -114,7 +117,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 40px 0; /* Space out the Bootstrap <hr> more */
 }
 .featurette {
   padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
