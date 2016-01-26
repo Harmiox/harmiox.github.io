@@ -1,6 +1,9 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.text-muted {
+    color: #a62f2f;
+}
 .navbar-right {
     margin-right: 10px !important;
 }
