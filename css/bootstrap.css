@@ -3,6 +3,8 @@
 -------------------------------------------------- */
 a.navbar-brand.hidden-md.hidden-lg.behaveName {
     font-family: 'Sigmar One', cursive;
+    color: #FFF !important;
+    transform: scaleY(2.1);
 }
 div.navbar-wrapper.behaveNav {
     margin-top: 60px !important;
