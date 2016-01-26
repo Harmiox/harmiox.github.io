@@ -4,6 +4,10 @@
 hr.featurette-divider.btmDivider {
     margin-bottom: 0px !important;
 }
+hr.featurette-divider.topDivider {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
 footer {
     color: #333;
 }
