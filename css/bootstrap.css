@@ -1,6 +1,15 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+a.btn.btn-default.behavePointBtn {
+    color: #fff;
+    background-color: #a62f2f;
+    border-color: #8c2828;
+}
+div.col-md-4.text-center.behavePoint {
+    margin-top: 150px;
+    margin-bottom: 25px;
+}
 div.row.behaveRow {
     margin-right: 2px !important;
     margin-left: 1px !important;
