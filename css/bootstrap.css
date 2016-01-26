@@ -13,7 +13,7 @@ div.col-md-4.text-center.behavePoint {
 div.row.behaveRow {
     margin-right: 2px !important;
     margin-left: 1px !important;
-    margin-top: 110px;
+    /*margin-top: 110px;*/
     background-color: #fff !important;
     color: #333 !important;
 }
