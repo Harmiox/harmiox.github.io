@@ -1,6 +1,12 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.carousel  {
+    margin-bottom: 35px !important;
+}
+div.container.behaveContainer.behaveTop {
+    margin-top: 110px;
+}
 a.btn.btn-default.behavePointBtn {
     color: #fff;
     background-color: #a62f2f;
