@@ -1,6 +1,10 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+a.btn.btn-lg.btn-primary {
+    background-color: #a62f2f !important;
+    border-color: #8c2828 !important;
+}
 a.navbar-brand.hidden-md.hidden-lg.behaveName {
     font-family: 'Sigmar One', cursive;
     color: #FFF !important;
@@ -16,8 +20,9 @@ img.desktopLogo {
 }
 
 body {
-  padding-bottom: 40px;
-  color: #5a5a5a;
+    padding-bottom: 40px;
+    color: #fff !important;
+    background-color: #333 !important;
 }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
