@@ -4,15 +4,17 @@
 .behaveBookBtn {
     position: absolute;
     right: 12px;
-    top: -30px;
+    top: -40px;
     color: #fff !important;
     background-color: #a62f2f;
     border-top: 2px solid #8c2828;
     border-right: 2px solid #8c2828;
     border-left: 2px solid #8c2828;
     border-radius: 2px;
-    padding: 5px;
+    padding: 3px 7px 3px 7px;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
+    font-size: 18px;
 }
 .behaveBookBtn a {
     color: #fff;
@@ -275,6 +277,12 @@ body {
     padding-bottom: 40px;
     color: #fff !important;
     background-image: url(http://harmiox.com/img/shattered.png);
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
 }
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -1480,13 +1488,6 @@ html {
   font-size: 10px;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-color: #fff;
 }
 input,
 button,
