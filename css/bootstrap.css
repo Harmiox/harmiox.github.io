@@ -1,6 +1,13 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+div.row.behaveRow {
+    margin-right: 2px !important;
+    margin-left: 1px !important;
+    margin-top: 110px;
+    background-color: #fff !important;
+    color: #333 !important;
+}
 .text-muted {
     color: #a62f2f !important;
 }
