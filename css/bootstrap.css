@@ -13,7 +13,7 @@
     border-radius: 2px;
     padding: 5px;
 }
-.behaveBookBtn a:link {
+.behaveBookBtn a {
     color: #fff;
     text-decoration: none;
 }
