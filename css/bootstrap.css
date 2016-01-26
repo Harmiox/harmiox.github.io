@@ -12,6 +12,7 @@
     border-left: 2px solid #8c2828;
     border-radius: 2px;
     padding: 5px;
+    font-weight: bold;
 }
 .behaveBookBtn a {
     color: #fff;
