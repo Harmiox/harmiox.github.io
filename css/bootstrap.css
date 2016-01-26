@@ -121,6 +121,8 @@ body {
 }
 .featurette {
   padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+    padding-left: 15px;
+    padding-right: 15px;
   overflow: hidden; /* Vertically center images part 2: clear their floats. */
 }
 .featurette-image {
@@ -4771,7 +4773,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse {
   background-color: #222;
-  border-color: #080808;
+  border-color: #a62f2f;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
