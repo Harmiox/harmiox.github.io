@@ -2,7 +2,7 @@
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
 .text-muted {
-    color: #a62f2f;
+    color: #a62f2f !important;
 }
 .navbar-right {
     margin-right: 10px !important;
