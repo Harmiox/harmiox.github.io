@@ -2,14 +2,17 @@
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
 .carouselH1 {
-       -webkit-text-stroke: 1px black;
-   color: white;
-   text-shadow:
-       1px 1px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000;
+    -webkit-text-stroke: 0.5px black;
+    color: white;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    z-index: 124189124;
+    background-color: rgba(166, 47, 47, 0.7);
+    padding: 15px;
+    border: 1px solid black;
+    border-right: 0px;
+    border-radius: 5px 0px 0px 5px;
 }
 .behaveTimeline {
     margin: 0px 10px 0px 10px;
