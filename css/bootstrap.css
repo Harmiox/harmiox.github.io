@@ -251,6 +251,7 @@ a.btn.btn-default.behavePointBtn {
 }
 div.col-md-4.text-center.behavePoint {
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 div.row.behaveRow.behaveCar {
     background: none;
@@ -1754,6 +1755,9 @@ mark,
 .text-muted {
     color: #a62f2f;
     font-size: 18px;
+}
+.text-unmuted {
+    color: #a62f2f;
 }
 .text-primary {
   color: #337ab7;
