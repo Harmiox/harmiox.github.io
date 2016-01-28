@@ -241,9 +241,6 @@ footer {
 hr.featurette-divider {
     border-top: 3px solid #a62f2f !important;
 }
-.carousel  {
-    margin-bottom: 35px !important;
-}
 div.container.behaveContainer.behaveTopContainer {
     margin-top: 110px;
 }
@@ -261,6 +258,7 @@ div.row.behaveRow.behaveCar {
 div.row.behaveRow {
     margin-right: 2px !important;
     margin-left: 1px !important;
+    margin-bottom: 25px;
     background-color: #fff;
     color: #333 !important;
 }
@@ -318,7 +316,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
