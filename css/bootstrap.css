@@ -1,6 +1,12 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.socialText {
+    float: left;
+    position: relative;
+    top: 4px;
+    margin-right: 10px;
+}
 .dropdown-backdrop {
     position: static;
 }
