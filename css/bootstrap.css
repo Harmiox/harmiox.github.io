@@ -4,7 +4,6 @@
 .socialText {
     float: left;
     position: relative;
-    top: 4px;
     margin-right: 10px;
 }
 .dropdown-backdrop {
@@ -279,6 +278,7 @@ div.row.behaveRow.behaveCar {
 }
 img.navSocial {
     margin-right: -15px;
+    margin-top: -5px;
 }
 a.btn.btn-lg.btn-primary {
     background-color: #a62f2f !important;
