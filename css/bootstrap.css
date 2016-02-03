@@ -1,6 +1,9 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.dropdown-backdrop {
+    position: static;
+}
 .carouselH1 {
     -webkit-text-stroke: 0.5px black;
     color: white;
