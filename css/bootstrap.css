@@ -265,12 +265,14 @@ div.col-md-4.text-center.behavePoint {
 div.row.behaveRow.behaveCar {
     background: none;
 }
-div.row.behaveRow {
+.behaveRow {
     margin-right: 2px !important;
     margin-left: 1px !important;
     margin-bottom: 25px;
     background-color: #fff;
     color: #333 !important;
+    border-top: 3px solid #a62f2f !important;
+    border-bottom: 3px solid #a62f2f !important;
 }
 .navbar-right {
     margin-right: 15px !important;
