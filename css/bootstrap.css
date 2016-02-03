@@ -1,6 +1,11 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.frontImage {
+    height: 512px;
+    width: 512px;
+    border: 2px solid black;
+}
 .socialText {
     float: left;
     position: relative;
