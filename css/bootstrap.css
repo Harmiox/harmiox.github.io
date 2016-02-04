@@ -27,6 +27,9 @@
 .bg-cyan {
     background-color: #00bcd4!important;
 }
+.bg-behave {
+    background-color: #a62f2f!important;
+}
 .pt-inner .pti-header>h2 {
     margin: 0;
     line-height: 100%;
