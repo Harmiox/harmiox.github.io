@@ -1,6 +1,79 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
+.pt-inner {
+    text-align: center;
+}
+.tile {
+    background-color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+}
+.tile {
+    box-shadow: 0 1px 1px rgba(0,0,0,.07);
+}
+.pt-inner .pti-header {
+    padding: 45px 10px 70px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 15px;
+}
+.bg-amber {
+    background-color: #ffc107!important;
+}
+.bg-green {
+    background-color: #4caf50!important;
+}
+.bg-cyan {
+    background-color: #00bcd4!important;
+}
+.pt-inner .pti-header>h2 {
+    margin: 0;
+    line-height: 100%;
+    color: #fff;
+    font-weight: 100;
+    font-size: 50px;
+}
+.pt-inner .pti-header>h2 small {
+    color: #fff;
+    letter-spacing: 0;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: 100;
+}
+.pt-inner .pti-header .ptih-title {
+    background-color: rgba(0,0,0,.1);
+    padding: 8px 10px 9px;
+    margin: 0 -10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.pt-inner .pti-header .ptih-title {
+    text-transform: uppercase;
+}
+.pt-inner .pti-body {
+    padding: 0 23px;
+}
+.pt-inner .pti-body .ptib-item:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.pt-inner .pti-body .ptib-item {
+    padding: 15px 0;
+    font-weight: 400;
+}
+.pt-inner .pti-footer {
+    padding: 10px 20px 30px;
+}
+.pt-inner .pti-footer>a {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    line-height: 60px;
+    font-size: 30px;
+}
 .frontImage {
     height: 512px;
     width: 512px;
