@@ -351,6 +351,10 @@ div.row.behaveRow.behaveCar {
     border-top: 3px solid #a62f2f !important;
     border-bottom: 3px solid #a62f2f !important;
 }
+.behaveBodyRow {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 .navbar-right {
     margin-right: 15px !important;
 }
