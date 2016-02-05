@@ -25,5 +25,7 @@ if(isset($_POST['name'], $_POST['email'], $_POST['message'])) {
 }
 
 $_SESSION['errors'] = $errors;
+$_SESSION['fields'] = $fields;
+
 
 header('Location: index.php');

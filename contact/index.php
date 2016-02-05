@@ -1,6 +1,8 @@
-<!php
+<?php
 
 session_start();
+$errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : [];
+$fields = isset($_SESSION['fields']) ? $_SESSION['fields'] : [];
 
 ?>
 
@@ -162,14 +164,19 @@ session_start();
                         <div class="row">
                             <form id="Highlighted-form" class="col-sm-6 col-sm-offset-3" action="contact.php" method="post" novalidate="">
                                 
-                                <div class="panel">
-                                    Errors Will Go Here
-                                </div>
-                                
+                                <?php if(!empty($errors)) ?>
+                                    <div class="panel">
+                                        <ul>
+                                            <li>
+                                                <?php echo implode('</li></li>', $errors); ?> 
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
                                 <div class="form-group">
                                   <label class="control-label" for="contact-name">Name</label>
                                   <div class="controls">
-                                    <input id="contact-name" name="contactName" placeholder="Your name" class="form-control requiredField Highlighted-label" data-new-placeholder="Your name" type="text" data-error-empty="Please enter your name">
+                                    <input id="contact-name" name="name" placeholder="Your name" class="form-control requiredField Highlighted-label" data-new-placeholder="Your name" type="text" data-error-empty="Please enter your name">
                                     <i class="fa fa-user"></i>
                                   </div>
                                 </div><!-- End name input -->
@@ -184,7 +191,7 @@ session_start();
                                 <div class="form-group">
                                   <label class="control-label" for="contact-message">Message</label>
                                     <div class="controls">
-                                        <textarea id="contact-message" name="comments" placeholder="Your message" class="form-control requiredField Highlighted-label" data-new-placeholder="Your message" rows="6" data-error-empty="Please enter your message"></textarea>
+                                        <textarea id="contact-message" name="message" placeholder="Your message" class="form-control requiredField Highlighted-label" data-new-placeholder="Your message" rows="6" data-error-empty="Please enter your message"></textarea>
                                         <i class="fa fa-comment"></i>
                                     </div>
                                 </div><!-- End textarea -->
@@ -214,3 +221,7 @@ session_start();
     </script>
 </body>
 </html>
+
+<?php
+unset($_SESSION['errors']);
+?>
