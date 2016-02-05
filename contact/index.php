@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<!php
+
+session_start();
+
+?>
+
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -6,7 +12,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Behave Weight Loss - Sustainable Fitness For a Sustainble
     Lifestyle</title><!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel=
     'stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel=
@@ -34,7 +40,7 @@
                      <a class="navbar-brand hidden-xs"
                     href="index.html"><img alt=
                     "Behave Weight Loss - Sustainable Fitness For a Sustainble Lifestyle"
-                    class="desktopLogo" src="img/behaveWeightLossLogo.png"></a>
+                    class="desktopLogo" src="/img/behaveWeightLossLogo.png"></a>
                     <a class=
                     "navbar-brand hidden-sm hidden-md hidden-lg behaveName"
                     href="index.html">Behave Weight Loss</a>
@@ -71,17 +77,17 @@
                         <li class="inactive">
                             <a href=
                             "https://www.facebook.com/RobertWarnerFitness/"><img alt="Behave Weight Loss - Facebook Page"
-                            class="navSocial" src="img/facebook.png"><div class="visible-xs socialText">Facebook</div></a>
+                            class="navSocial" src="/img/facebook.png"><div class="visible-xs socialText">Facebook</div></a>
                         </li>
                         <li class="inactive">
                             <a href=
                             "https://www.instagram.com/behaveweightloss/"><img alt="Behave Weight Loss - Instagram Page"
-                            class="navSocial" src="img/instagram.png"><div class="visible-xs socialText">Instagram</div></a>
+                            class="navSocial" src="/img/instagram.png"><div class="visible-xs socialText">Instagram</div></a>
                         </li>
                         <li class="inactive">
                             <a href="https://twitter.com/behavefit"><img alt=
                             "Behave Weight Loss - Twitter Page" class=
-                            "navSocial" src="img/twitter.png"><div class="visible-xs socialText">Twitter</div></a>
+                            "navSocial" src="/img/twitter.png"><div class="visible-xs socialText">Twitter</div></a>
                         </li>
                     </ul>
                 </div>
@@ -103,7 +109,7 @@
                     <h1 class="carouselH1">Sustainable Fitness for a Sustainable Lifestyle!</h1>
                     <div class="item active">
                         
-                        <img class="img-responsive" src="img/insideStudio.jpg"
+                        <img class="img-responsive" src="/img/insideStudio.jpg"
                         style="width:100%">
                         <div class="container">
                             <div class="carousel-caption">
@@ -114,7 +120,7 @@
                     </div>
                     <div class="item">
                         
-                        <img class="img-responsive" src="img/outsideStudio.jpg"
+                        <img class="img-responsive" src="/img/outsideStudio.jpg"
                         style="width:100%">
                         <div class="container">
                             <div class="carousel-caption">
@@ -125,7 +131,7 @@
                     </div>
                     <div class="item">
                         
-                        <img class="img-responsive" src="img/carousel1.png"
+                        <img class="img-responsive" src="/img/carousel1.png"
                         style="width:100%">
                         <div class="container">
                             <div class="carousel-caption">
@@ -149,43 +155,46 @@
     <div class="container marketing">
         <!-- Features -->
         <div class="row behaveRow">
-
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-<div class="container bootstrap snippet">
-    <section id="contact" class="gray-bg padding-top-bottom">
-    	<div class="container bootstrap snippet">
-            <div class="row">
-				<form id="Highlighted-form" class="col-sm-6 col-sm-offset-3" action="contact.php" method="post" novalidate="">
-					
-					<div class="form-group">
-					  <label class="control-label" for="contact-name">Name</label>
-					  <div class="controls">
-						<input id="contact-name" name="contactName" placeholder="Your name" class="form-control requiredField Highlighted-label" data-new-placeholder="Your name" type="text" data-error-empty="Please enter your name">
-						<i class="fa fa-user"></i>
-					  </div>
-					</div><!-- End name input -->
-					
-					<div class="form-group">
-					  <label class="control-label" for="contact-mail">Email</label>
-					  <div class=" controls">
-						<input id="contact-mail" name="email" placeholder="Your email" class="form-control requiredField Highlighted-label" data-new-placeholder="Your email" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
-						<i class="fa fa-envelope"></i>
-					  </div>
-					</div><!-- End email input -->
-					<div class="form-group">
-					  <label class="control-label" for="contact-message">Message</label>
-						<div class="controls">
-							<textarea id="contact-message" name="comments" placeholder="Your message" class="form-control requiredField Highlighted-label" data-new-placeholder="Your message" rows="6" data-error-empty="Please enter your message"></textarea>
-							<i class="fa fa-comment"></i>
-						</div>
-					</div><!-- End textarea -->
-					<p><button name="submit" type="submit" class="btn btn-info btn-block" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent"><i class="fa fa-location-arrow"></i>Send Message</button></p>
-					<input type="hidden" name="submitted" id="submitted" value="true">	
-				</form><!-- End Highlighted-form -->
-			</div>	
-		</div>	
-	</section>
-    </div>                    
+            <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+            <div class="container bootstrap snippet">
+                <section id="contact" class="gray-bg padding-top-bottom">
+                    <div class="container bootstrap snippet">
+                        <div class="row">
+                            <form id="Highlighted-form" class="col-sm-6 col-sm-offset-3" action="contact.php" method="post" novalidate="">
+                                
+                                <div class="panel">
+                                    Errors Will Go Here
+                                </div>
+                                
+                                <div class="form-group">
+                                  <label class="control-label" for="contact-name">Name</label>
+                                  <div class="controls">
+                                    <input id="contact-name" name="contactName" placeholder="Your name" class="form-control requiredField Highlighted-label" data-new-placeholder="Your name" type="text" data-error-empty="Please enter your name">
+                                    <i class="fa fa-user"></i>
+                                  </div>
+                                </div><!-- End name input -->
+                                
+                                <div class="form-group">
+                                  <label class="control-label" for="contact-mail">Email</label>
+                                  <div class=" controls">
+                                    <input id="contact-mail" name="email" placeholder="Your email" class="form-control requiredField Highlighted-label" data-new-placeholder="Your email" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
+                                    <i class="fa fa-envelope"></i>
+                                  </div>
+                                </div><!-- End email input -->
+                                <div class="form-group">
+                                  <label class="control-label" for="contact-message">Message</label>
+                                    <div class="controls">
+                                        <textarea id="contact-message" name="comments" placeholder="Your message" class="form-control requiredField Highlighted-label" data-new-placeholder="Your message" rows="6" data-error-empty="Please enter your message"></textarea>
+                                        <i class="fa fa-comment"></i>
+                                    </div>
+                                </div><!-- End textarea -->
+                                <p><button name="submit" type="submit" class="btn btn-info btn-block" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent"><i class="fa fa-location-arrow"></i>Send Message</button></p>
+                                <input type="hidden" name="submitted" id="submitted" value="true">	
+                            </form><!-- End Highlighted-form -->
+                        </div>	
+                    </div>	
+                </section>
+            </div>                    
         </div><!-- /.row -->
         <!-- / FEATURES -->
         <!-- FOOTER -->
