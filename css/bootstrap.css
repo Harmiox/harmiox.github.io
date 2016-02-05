@@ -1,7 +1,11 @@
 /* Start @Harmiox */
 /* BOOTSTRAP 3.x GLOBAL STYLES
 -------------------------------------------------- */
-
+.servicesPhoto {
+    position: relative;
+    height: 200px;
+    margin:-140px 0px 25px 0px;
+}
 .ribbon {
     position: absolute;
     top: 20px;
@@ -114,6 +118,7 @@
     background-color: #333;
     color: #eee;
     margin-bottom: 30px;
+    margin-top:100px;
     position: relative;
     font-size: 18px;
 }
