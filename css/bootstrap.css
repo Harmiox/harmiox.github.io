@@ -4,7 +4,9 @@
 .servicesPhoto {
     position: relative;
     height: 200px;
-    margin:-140px 0px 25px 0px;
+    margin: -140px 0px 5px 0px;
+    border: 3px solid #333 !important;
+    border-radius: 50%;
 }
 .ribbon {
     position: absolute;
@@ -144,11 +146,11 @@
     background-color: #a62f2f!important;
 }
 .pt-inner .pti-header>h2 {
-    margin: 0;
-    line-height: 100%;
-    color: #fff;
-    font-weight: 100;
-    font-size: 50px;
+margin: 10px 0 -20px 0;
+line-height: 100%;
+color: #fff;
+font-weight: 100;
+font-size: 50px;
 }
 .pt-inner .pti-header>h2 small {
     color: #fff;
