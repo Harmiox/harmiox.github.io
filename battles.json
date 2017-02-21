@@ -26,20 +26,25 @@
                 }
             ]
         },
-        {
+        {          
             "name":"archers",
             "type":"troop",
             "rarity": "common",
             "cost":3,
             "scenarios": [
                 {
-                    "message":"",
+                    "message":"$user played their $card into $opponent's left lane and gets off $damage tower damage!",
+                    "damage":162,
+                    "author":"Gamerkid"
+                },
+                {			
+                    "message":"$user played their $card but $opponent played Log and defended Successfully!",
                     "damage":0,
-                    "author":""
-                }
+                    "author":"Gamerkid"        			        
+		}
             ]
         },
-        {
+        {                   				
             "name":"freeze spell",
             "type":"spell",
             "rarity": "common",
