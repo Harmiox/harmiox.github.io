@@ -178,7 +178,7 @@
 					"author": "Gamerkid"
 				},
 				
-                     ]
+                        ]
 		},
 		{
 			"name": "elite barbarians",
@@ -190,7 +190,7 @@
 					"message": "$user plays their $card, but $opponent uses they're rocket and Misses!",
 					"damage": 700,
 					"author": "Gamerkid"
-				},						}				
+				},										
 				{
 					"message": "$user played their $card but $opponent played his P.E.K.K.A and defended successfully!",
 					"damage": 0,
@@ -218,14 +218,17 @@
 			"cost": 3,
 			"scenarios": [
 				{
-					"message": "",
+					"message": "$user played their $card but $opponent uses they're Zap and kills the whole Group!",
 					"damage": 0,
-					"author": ""
-				}
-			]
-		},
-		{
-			"name": "arrows",
+					"author": "Gamerkid"
+				},
+			        {
+					"message": "$user played their $card but $opponent missed they're Arrows and does $damage Tower Damage!",
+					"damage": 600,					
+                                        "author": "Gamerkid"    
+											
+					
+                        "name": "arrows",
 			"type": "spell",
 			"rarity": "common",
 			"cost": 3,
