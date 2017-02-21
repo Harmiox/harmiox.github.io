@@ -168,9 +168,9 @@
 			"cost": 6,
 			"scenarios": [
 				{
-					"message": "",
+					"message": "$user played their $card but $opponent defended it by distracting it with a Inferno tower",
 					"damage": 0,
-					"author": ""
+					"author": "Gamerkid"
 				}
 			]
 		},
