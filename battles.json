@@ -51,9 +51,9 @@
 			"cost": 4,
 			"scenarios": [
 				{
-					"message": "",
+					"message": "$user played their $card but it was wasted!",
 					"damage": 0,
-					"author": ""
+					"author": "deep"
 				}
 			]
 		},
