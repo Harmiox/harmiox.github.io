@@ -64,9 +64,14 @@
 			"cost": 2,
 			"scenarios": [
 				{
-					"message": "",
+					"message": "$user played their $card but $opponent zapped it!",
 					"damage": 0,
-					"author": ""
+					"author": "deep"
+				},
+				{
+					"message":"$user played thier $card and $opponent missed their Log!",
+					"damage": 250,
+					"author":"deep"
 				}
 			]
 		},
