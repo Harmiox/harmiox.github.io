@@ -176,8 +176,9 @@
 					"message": "$user played their $card but $opponent defended it by distracting it with a Inferno tower",
 					"damage": 0,
 					"author": "Gamerkid"
-				}
-			]
+				},
+				
+                     ]
 		},
 		{
 			"name": "elite barbarians",
@@ -186,13 +187,18 @@
 			"cost": 6,
 			"scenarios": [
 				{
-					"message": "",
+					"message": "$user plays their $card, but $opponent uses they're rocket and Misses!",
+					"damage": 700,
+					"author": "Gamerkid"
+				},						}				
+				{
+					"message": "$user played their $card but $opponent played his P.E.K.K.A and defended successfully!",
 					"damage": 0,
-					"author": ""
+					"author": "Gamerkid"
 				}
-			]
-		},
-		{
+			]				
+                },							
+                {
 			"name": "ice spirit",
 			"type": "troop",
 			"rarity": "common",
