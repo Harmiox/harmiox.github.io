@@ -225,7 +225,7 @@
 			        {
 					"message": "$user played their $card but $opponent missed they're Arrows and does $damage Tower Damage!",
 					"damage": 600,					
-                                        "author": "Gamerkid"    
+                                        "author": "Gamerkid"}]},{   
 											
 					
                         "name": "arrows",
