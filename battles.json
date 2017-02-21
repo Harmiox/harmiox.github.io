@@ -1,282 +1,282 @@
 {
-    "towers": {
+	"towers": {
 		"king tower": {
-            "level": 1,
-			"health": 2400,
 			"0": 0,
-            "1": 0
+			"1": 0,
+			"level": 1,
+			"health": 2400
 		}
 	},
 	"cards": [
-        {
-            "name":"knight",
-            "type":"troop",
-            "rarity": "common",
-            "cost":3,
-            "scenarios": [
-                {
-                    "message":"$user played their $card into $opponent's undefended lane, getting off $damage tower damage!",
-                    "damage":348,
-                    "author":"harmiox"
-                },
-                {
-                    "message":"$user played their $card but $opponent played his mini pekka and defended successfully.",
-                    "damage":0,
-                    "author":"harmiox"
-                }
-            ]
-        },
-        {          
-            "name":"archers",
-            "type":"troop",
-            "rarity": "common",
-            "cost":3,
-            "scenarios": [
-                {
-                    "message":"$user played their $card into $opponent's left lane and gets off $damage tower damage!",
-                    "damage":162,
-                    "author":"Gamerkid"
-                },
-                {			
-                    "message":"$user played their $card but $opponent played Log and defended Successfully!",
-                    "damage":0,
-                    "author":"Gamerkid"        			        
+		{
+			"name": "knight",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 3,
+			"scenarios": [
+				{
+					"message": "$user played their $card into $opponent's undefended lane, getting off $damage tower damage!",
+					"damage": 348,
+					"author": "harmiox"
+				},
+				{
+					"message": "$user played their $card but $opponent played his mini pekka and defended successfully.",
+					"damage": 0,
+					"author": "harmiox"
+				}
+			]
+		},
+		{
+			"name": "archers",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 3,
+			"scenarios": [
+				{
+					"message": "$user played their $card into $opponent's left lane and gets off $damage tower damage!",
+					"damage": 162,
+					"author": "Gamerkid"
+				},
+				{
+					"message": "$user played their $card but $opponent played Log and defended Successfully!",
+					"damage": 0,
+					"author": "Gamerkid"
+				}
+			]
+		},
+		{
+			"name": "freeze spell",
+			"type": "spell",
+			"rarity": "common",
+			"cost": 4,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "spear goblins",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 2,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "bomber",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 3,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "goblins",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 2,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "minion horde",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 5,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "skeletons",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 1,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "minions",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 3,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "barbarians",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 5,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "fire spirits",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 2,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "royal giant",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 6,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "elite barbarians",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 6,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "ice spirit",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 1,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "goblin gang",
+			"type": "troop",
+			"rarity": "common",
+			"cost": 3,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "arrows",
+			"type": "spell",
+			"rarity": "common",
+			"cost": 3,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "zap",
+			"type": "spell",
+			"rarity": "common",
+			"cost": 2,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "cannon",
+			"type": "building",
+			"rarity": "common",
+			"cost": 3,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "tesla",
+			"type": "building",
+			"rarity": "common",
+			"cost": 4,
+			"scenarios": [
+				{
+					"message": "!",
+					"damage": 0,
+					"author": ""
+				}
+			]
+		},
+		{
+			"name": "mortar",
+			"type": "building",
+			"rarity": "common",
+			"cost": 4,
+			"scenarios": [
+				{
+					"message": "",
+					"damage": 0,
+					"author": ""
+				}
+			]
 		}
-            ]
-        },
-        {                   				
-            "name":"freeze spell",
-            "type":"spell",
-            "rarity": "common",
-            "cost":4,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"spear goblins",
-            "type":"troop",
-            "rarity": "common",
-            "cost":2,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"bomber",
-            "type":"troop",
-            "rarity": "common",
-            "cost":3,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"goblins",
-            "type":"troop",
-            "rarity": "common",
-            "cost":2,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"minion horde",
-            "type":"troop",
-            "rarity": "common",
-            "cost":5,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"skeletons",
-            "type":"troop",
-            "rarity": "common",
-            "cost":1,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"minions",
-            "type":"troop",
-            "rarity": "common",
-            "cost":3,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"barbarians",
-            "type":"troop",
-            "rarity": "common",
-            "cost":5,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"fire spirits",
-            "type":"troop",
-            "rarity": "common",
-            "cost":2,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"royal giant",
-            "type":"troop",
-            "rarity": "common",
-            "cost":6,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"elite barbarians",
-            "type":"troop",
-            "rarity": "common",
-            "cost":6,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"ice spirit",
-            "type":"troop",
-            "rarity": "common",
-            "cost":1,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"goblin gang",
-            "type":"troop",
-            "rarity": "common",
-            "cost":3,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"arrows",
-            "type":"spell",
-            "rarity": "common",
-            "cost":3,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"zap",
-            "type":"spell",
-            "rarity": "common",
-            "cost":2,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"cannon",
-            "type":"building",
-            "rarity": "common",
-            "cost":3,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"tesla",
-            "type":"building",
-            "rarity": "common",
-            "cost":4,
-            "scenarios": [
-                {
-                    "message":"!",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        },
-        {
-            "name":"mortar",
-            "type":"building",
-            "rarity": "common",
-            "cost":4,
-            "scenarios": [
-                {
-                    "message":"",
-                    "damage":0,
-                    "author":""
-                }
-            ]
-        }
 	]
 }
