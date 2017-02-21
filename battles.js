@@ -1,5 +1,4 @@
 let cogs = {};
-
 function getJson() {
     fs = require('fs');
     let economyJson = JSON.parse(fs.readFileSync("./cogs/battles.json").toString());
@@ -7,309 +6,280 @@ function getJson() {
 }
 let battle = {
     "towers": {
-        "king tower": {
+		"king tower": {
             "level": 1,
-            "health": 2400,
-            "0": 0,
+			"health": 2400,
+			"0": 0,
             "1": 0
-        }
-    },
-    "cards": [{
-            "name": "knight",
-            "type": "troop",
+		}
+	},
+	"cards": [
+        {
+            "name":"knight",
+            "type":"troop",
             "rarity": "common",
-            "cost": 3,
-            "scenarios": [{
-                    "message": "and he reached the tower getting two swings off!",
-                    "damage": 348
-                },
+            "cost":3,
+            "scenarios": [
                 {
-                    "message": "and he reached the tower but only gets one swing off.",
-                    "damage": 174
-                },
-                {
-                    "message": "and he reached the tower at full health! Maximum damage!",
-                    "damage": 1000
+                    "message":"$user played their $card into $opponent's undefended lane, getting off $damage tower damage!",
+                    "damage":348,
+                    "author":"harmiox"
                 }
             ]
         },
         {
-            "name": "archers",
-            "type": "troop",
+            "name":"archers",
+            "type":"troop",
             "rarity": "common",
-            "cost": 3,
-            "scenarios": [{
-                "message": "and they shoot, double damage!",
-                "damage": 234
-            }]
-        },
-        {
-            "name": "freeze spell",
-            "type": "spell",
-            "rarity": "common",
-            "cost": 4,
-            "scenarios": [{
-                "message": "but it was wasted.",
-                "damage": 0
-            }]
-        },
-        {
-            "name": "spear goblins",
-            "type": "troop",
-            "rarity": "common",
-            "cost": 2,
-            "scenarios": [{
-                    "message": "and they reached the tower, but only got to throw their spears once.",
-                    "damage": 150
-                },
+            "cost":3,
+            "scenarios": [
                 {
-                    "message": "but they were quickly zapped! Zero damage.",
-                    "damage": 0
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "bomber",
-            "type": "troop",
+            "name":"freeze spell",
+            "type":"spell",
             "rarity": "common",
-            "cost": 3,
-            "scenarios": [{
-                "message": "and he landed two hits!",
-                "damage": 542
-            }]
-        },
-        {
-            "name": "goblins",
-            "type": "troop",
-            "rarity": "common",
-            "cost": 2,
-            "scenarios": [{
-                    "message": "and all three goblins quickly got a stab in!",
-                    "damage": 318
-                },
+            "cost":4,
+            "scenarios": [
                 {
-                    "message": "but only two goblins got a stab in.",
-                    "damage": 212
-                },
-                {
-                    "message": "but only one goblin got a stab in.",
-                    "damage": 106
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "minion horde",
-            "type": "troop",
+            "name":"spear goblins",
+            "type":"troop",
             "rarity": "common",
-            "cost": 5,
-            "scenarios": [{
-                    "message": "but the horde got zapped, and only one minion reached the tower.",
-                    "damage": 84
-                },
+            "cost":2,
+            "scenarios": [
                 {
-                    "message": "but the horde got arrowed! Zero damage.",
-                    "damage": 0
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "skeletons",
-            "type": "troop",
+            "name":"bomber",
+            "type":"troop",
             "rarity": "common",
-            "cost": 1,
-            "scenarios": [{
-                    "message": "but the doots were burned by incoming fire spirits. Zero damage.",
-                    "damage": 0
-                },
+            "cost":3,
+            "scenarios": [
                 {
-                    "message": "but Larry got lost, so the other doots looked for him. Zero damage.",
-                    "damage": 0
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "minions",
-            "type": "troop",
+            "name":"goblins",
+            "type":"troop",
             "rarity": "common",
-            "cost": 3,
-            "scenarios": [{
-                "message": "and all three minions landed two hits!",
-                "damage": 504
-            }]
-        },
-        {
-            "name": "barbarians",
-            "type": "troop",
-            "rarity": "common",
-            "cost": 5,
-            "scenarios": [{
-                    "message": "and all four barbarians hit the tower twice!",
-                    "damage": 1056
-                },
+            "cost":2,
+            "scenarios": [
                 {
-                    "message": "but they were fireballed, and only one barbarian got a hit.",
-                    "damage": 159
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "fire spirits",
-            "type": "troop",
+            "name":"minion horde",
+            "type":"troop",
             "rarity": "common",
-            "cost": 2,
-            "scenarios": [{
-                    "message": "but two spirits took out a minion horde, so only the last spirit hit the tower.",
-                    "damage": 169
-                },
+            "cost":5,
+            "scenarios": [
                 {
-                    "message": "and all three spirits hit the tower!",
-                    "damage": 507
-                },
-                {
-                    "message": "but one of the spirits got zapped, so only two hit the tower.",
-                    "damage": 338
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "royal giant",
-            "type": "troop",
+            "name":"skeletons",
+            "type":"troop",
             "rarity": "common",
-            "cost": 6,
-            "scenarios": [{
-                    "message": "and the royal giant is able to land five shots!",
-                    "damage": 795
-                },
+            "cost":1,
+            "scenarios": [
                 {
-                    "message": "but an ice wizard was slowing down the royal giant, so he only landed two shots",
-                    "damage": 318
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "elite barbarians",
-            "type": "troop",
+            "name":"minions",
+            "type":"troop",
             "rarity": "common",
-            "cost": 6,
-            "scenarios": [{
-                    "message": "but the elite barbarians were shut down by an electro wizard. Zero damage.",
-                    "damage": 0
-                },
+            "cost":3,
+            "scenarios": [
                 {
-                    "message": "and not only did the brothers reach the tower, they got raged!",
-                    "damage": 1524
-                },
-                {
-                    "message": "but one elite barbarian fell into the river. The remaining one got two hits off.",
-                    "damage": 508
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "ice spirit",
-            "type": "troop",
+            "name":"barbarians",
+            "type":"troop",
             "rarity": "common",
-            "cost": 1,
-            "scenarios": [{
-                    "message": "and the ice spirit gleefully landed on the tower",
-                    "damage": 95
-                },
+            "cost":5,
+            "scenarios": [
                 {
-                    "message": "but a wizard burned the spirit! Zero damage.",
-                    "damage": 0
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "goblin gang",
-            "type": "troop",
+            "name":"fire spirits",
+            "type":"troop",
             "rarity": "common",
-            "cost": 3,
-            "scenarios": [{
-                    "message": "but the gang was unfortunately crushed by the log. Zero damage.",
-                    "damage": 0
-                },
+            "cost":2,
+            "scenarios": [
                 {
-                    "message": "but only the spear goblins made it to the tower. All three got two hits in.",
-                    "damage": 300
-                },
-                {
-                    "message": "but only the stab goblins made it to the tower. All three got two hits in.",
-                    "damage": 636
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "arrows",
-            "type": "spell",
+            "name":"royal giant",
+            "type":"troop",
             "rarity": "common",
-            "cost": 3,
-            "scenarios": [{
-                    "message": "and it successfully clipped the tower!",
-                    "damage": 98
-                },
+            "cost":6,
+            "scenarios": [
                 {
-                    "message": "but it missed! Zero damage.",
-                    "damage": 0
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "zap",
-            "type": "spell",
+            "name":"elite barbarians",
+            "type":"troop",
             "rarity": "common",
-            "cost": 2,
-            "scenarios": [{
-                "message": "and not only did it kill an incoming skeleton army, it clipped the tower!",
-                "damage": 159
-            }]
-        },
-        {
-            "name": "cannon",
-            "type": "building",
-            "rarity": "common",
-            "cost": 3,
-            "scenarios": [{
-                    "message": "and it successfully defended a hog rider push!",
-                    "damage": 0
-                },
+            "cost":6,
+            "scenarios": [
                 {
-                    "message": "but it was deployed too far! A giant got two hits in.",
-                    "damage": 0
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         },
         {
-            "name": "tesla",
-            "type": "building",
+            "name":"ice spirit",
+            "type":"troop",
             "rarity": "common",
-            "cost": 4,
-            "scenarios": [{
-                "message": "and it popped out of the ground, which distracted a royal giant!",
-                "damage": 0
-            }]
+            "cost":1,
+            "scenarios": [
+                {
+                    "message":"",
+                    "damage":0,
+                    "author":""
+                }
+            ]
         },
         {
-            "name": "mortar",
-            "type": "building",
+            "name":"goblin gang",
+            "type":"troop",
             "rarity": "common",
-            "cost": 4,
-            "scenarios": [{
-                    "message": "and it successfully hits the tower 4 times!",
-                    "damage": 916
-                },
+            "cost":3,
+            "scenarios": [
                 {
-                    "message": "and it successfully hits the tower 2 times!",
-                    "damage": 458
+                    "message":"",
+                    "damage":0,
+                    "author":""
+                }
+            ]
+        },
+        {
+            "name":"arrows",
+            "type":"spell",
+            "rarity": "common",
+            "cost":3,
+            "scenarios": [
+                {
+                    "message":"",
+                    "damage":0,
+                    "author":""
+                }
+            ]
+        },
+        {
+            "name":"zap",
+            "type":"spell",
+            "rarity": "common",
+            "cost":2,
+            "scenarios": [
+                {
+                    "message":"",
+                    "damage":0,
+                    "author":""
+                }
+            ]
+        },
+        {
+            "name":"cannon",
+            "type":"building",
+            "rarity": "common",
+            "cost":3,
+            "scenarios": [
+                {
+                    "message":"",
+                    "damage":0,
+                    "author":""
+                }
+            ]
+        },
+        {
+            "name":"tesla",
+            "type":"building",
+            "rarity": "common",
+            "cost":4,
+            "scenarios": [
+                {
+                    "message":"!",
+                    "damage":0,
+                    "author":""
+                }
+            ]
+        },
+        {
+            "name":"mortar",
+            "type":"building",
+            "rarity": "common",
+            "cost":4,
+            "scenarios": [
+                {
+                    "message":"",
+                    "damage":0,
+                    "author":""
                 }
             ]
         }
-    ]
+	]
 }
-var players = [null, null];
+var players = [null,null];
 var current;
 var opponent;
-var card;
+var card; 
 var scenario;
 var inSession = false;
 
@@ -317,18 +287,16 @@ function switchPlayer() {
     if (current === 0) {
         current = 1;
         opponent = 0;
-    } else {
+    } else if (current === 1) {
         current = 0;
         opponent = 1;
     }
 }
-
 function chooseCard() {
-    card = battle.cards[(Math.floor((Math.random() * battle.cards.length) + 1) - 1)];
+    card = battle.cards[(Math.floor((Math.random() * battle.cards.length) + 1)-1)];
 }
-
 function chooseScenario() {
-    scenario = card.scenarios[(Math.floor((Math.random() * card.scenarios.length) + 1) - 1)];
+    scenario = card.scenarios[(Math.floor((Math.random() * card.scenarios.length) + 1)-1)];
 }
 
 function friendlyBattle(msg) {
@@ -346,41 +314,51 @@ function friendlyBattle(msg) {
             inSession = false;
             return;
         }
-
+        
         msg.channel.sendMessage("**" + players[0].username + "** challenges **" + players[1].username + "** to a friendly battle! Let the battles begin!");
-
+        
         battle.towers["king tower"][0] = battle.towers["king tower"].health;
         battle.towers["king tower"][1] = battle.towers["king tower"].health;
-
-        current = (Math.floor((Math.random() * 2) + 1) - 1);
+        
+        current = (Math.floor((Math.random() * 2) + 1)-1);
         if (current === 0) {
             opponent = 0;
         } else {
             opponent = 1;
         }
         msg.channel.sendMessage("**" + players[current].username + "** decides to play a card first!");
-
+        
         let moves = [];
-        while (battle.towers["king tower"][0] > 0 && battle.towers["king tower"][1] > 0) {
+        while(battle.towers["king tower"][0] > 0 && battle.towers["king tower"][1] > 0) {
             chooseCard();
             chooseScenario();
             battle.towers["king tower"][opponent] -= scenario.damage;
-            if (battle.towers["king tower"][opponent] <= 0) {
-                moves.push("**" + players[current].username + "** played their " + card.name + " " + scenario.message + " (" + scenario.damage + "dmg | " + battle.towers["king tower"][opponent] + "hp)\n**" + players[current] + " three crowned " + players[opponent] + "!**");
+            let attacker = players[current].username;
+            let defender = players[opponent].username;
+            let damage = scenario.damage;
+            let name = card.name;
+            let hp = battle.towers["king tower"][opponent];
+            let message = scenario.message.replace(/\$user/g,(`**${attacker}**`)).replace(/\$card/g,(`**${name}**`)).replace(/\$opponent/g,(`**${defender}**`)).replace(/\$damage/g,(`**${damage}**`));
+            if (moves.length <= 16) {
+                if (moves.length === 8) {
+                    moves.push("**__Overtime!__**");
+                }
+                if (battle.towers["king tower"][opponent] <= 0) {
+                    moves.push(`${message} **(${defender}: ${hp}hp)**`);
+                    moves.push(`**${attacker} three crowned ${defender} !**`);
+                } else {
+                    moves.push(`${message} **(${defender}: ${hp}hp)**`);
+                    switchPlayer();
+                }
             } else {
-                moves.push("**" + players[current].username + "** played their " + card.name + " " + scenario.message + " (" + scenario.damage + "dmg | " + battle.towers["king tower"][opponent] + "hp)");
-            }
-            switchPlayer();
+                moves.push("**__Time ran out, the match ended in a draw!__**");
+                break;
+            }    
         }
-        let gameInterval = setInterval(() => {
+        let gameInterval = setInterval(()=>{
             let nextMove = moves.shift();
-            if (!nextMove) {
-                clearInterval(gameInterval);
-                inSession = false;
-            }
-            if (nextMove != undefined) {
-                msg.channel.sendMessage(nextMove);
-            }
+            if (!nextMove) {clearInterval(gameInterval);inSession=false;}
+            if (nextMove != undefined) {msg.channel.sendMessage(nextMove);}
         }, 1000);
     } else {
         msg.channel.sendMessage("A battle is currently in progress.");
@@ -390,7 +368,7 @@ function friendlyBattle(msg) {
 var battles = function() {
     var self = this;
     self.returnJson = getJson();
-    self.onReady = function(cogsFile) {
+    self.onReady = function(cogsFile){ 
         cogs = cogsFile;
         console.log("battles.js loaded");
     }
