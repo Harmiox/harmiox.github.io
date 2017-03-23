@@ -8,6 +8,13 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 var fs = require('fs');
 var jsonFile = 'heistassistant.json'
+
+//Cleverbot
+const Cleverbot = require('cleverbot');
+let clev = new Cleverbot({
+    key: 'clashroyale'
+});
+
 //Get's the login token from json file and than logs in the bot.
 fs.readFile(jsonFile, function read(err, data) {
     if (err) {
@@ -25,6 +32,8 @@ fs.readFile(jsonFile, function read(err, data) {
 let json = null;
 
 client.on('ready', () => {
+    endHeist(getJsonSync());
+    json = getJsonSync();
     console.log("Heist Assistant v2.0 Is Logged In!");
 });
 
@@ -33,6 +42,7 @@ function getJsonSync() {
 }
 function updateJsonSync(json) {
 	fs.writeFileSync(jsonFile, JSON.stringify(json, null, "\t"), 'utf8');
+    json = getJsonSync();
 }
 function startHeist(heistId,message,json) {
     console.log("Started Heist!")
@@ -47,15 +57,22 @@ function startHeist(heistId,message,json) {
     }
     addCrew(heistId,message,json);
 }
-function endHeist(id,message,json) {
-    console.log(`The heist ${id} has ended.`);
+function endHeist(json) {
+    console.log(`The heist has ended.`);
     json.active = false;
     updateJsonSync(json);
 }
 function addCrew(id,message,json) {
     console.log(`Adding ${message.author.username} to the crew for heist ${id}.`);
-    json.heists[id].crew.push(message.author);
-    updateJsonSync(json);
+    let exists = false;
+    for (let i=0;i<json.heists[id].crew.length;i+=1) {
+        if (json.heists[id].crew[i].id === message.author.id) {
+            exists = true;
+        }
+    }
+    if (exists === false) {
+        json.heists[id].crew.push(message.author);
+    }
 }
 function calculatePayouts(id,message,json) {
     console.log(`Calculating payouts for heist ${id}.`);
@@ -67,10 +84,12 @@ function calculatePayouts(id,message,json) {
         if ((!splitMessage[i].match(/split/i)) && (!splitMessage[i].match(/-------/i)) && (!splitMessage[i].match(/```Python/i)) && (!splitMessage[i].match(/Criminals/i))) {
             let tempString = splitMessage[i].replace("```", "").replace(/\s+/g, ' ').trim();
             let parsedString = tempString.split(" ");
+            let winner = parsedString.slice(0,parsedString.length-3).join(" ");
+            let winning = parsedString[parsedString.length-1];
             //Add their winning to total amount stolen in heist
-            totalStolen += parseInt(parsedString[1]);
+            totalStolen += parseInt(winning);
             //username,winning
-            winners.set(parsedString[0], parsedString[1]);
+            winners.set(winner, winning);
         }
     }
     //Amount of winners and losers
@@ -85,35 +104,31 @@ function calculatePayouts(id,message,json) {
     json.heists[id].owed = totalOwed;
     json.heists[id].stolen = totalStolen
     json.heists[id].won = true;
-    for (i = 0; i < json.heists[id].crew; i += 1) {
-        console.log("i")
+    for (i=0; i<json.heists[id].crew.length;i+=1) {
         if (winners.has(json.heists[id].crew[i].username)) {
-            json.heists[id].winners.push(json.heists[id].crew[i].username);
+            json.heists[id].winners.push(json.heists[id].crew[i].id);
         } else {
-            json.heists[id].losers.push(json.heists[id].crew[i].username);
+            json.heists[id].losers.push(json.heists[id].crew[i].id);
         }
     }
-    endHeist(id,message,json);
-
+    endHeist(json);
     //Send out the command(alias) to split between crew.
-    message.channel.sendMessage(`The command for splitting is: \`!h${id} ${getAlias(id,payup,message)}\`.`);
+    message.channel.sendMessage(`The command for splitting is: \`${getAlias(id,payup,message)}\`.`);
 }
-function splitPayment(id,amount,message,json) {
-    console.log(`Splitting the payment of ${amount} to the crew of heist ${id}.`);
-    for (losers in json.heists[id].losers) {
-        message.guild.fetchMember(json.heists[id].losers[loser].id).then(member => {
-            message.channel.sendMessage(`!pay ${member.user.id} ${Math.floor(((json.heists[id].stolen * 0.75)) / json.heists[id].losers.length)}`).then(() => {
-                const filter = m => (m.author.id === "286626550076407810" && m.content.match(client.user.username) && (parseInt(m.content.split(" ")[0]) >= 0));
-                message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
-                    let amount = parseInt(collection.first().content.split(" ")[0]);
-                    json.heists[id].owed -= amount;
-                    if (json.heists[id].owed <= 0) {
-                        deleteAlias(id,message);
-                    }
-                    updateJsonSync();
-                }).catch(() => {});
+function splitPayment(id,message,json,losers,split) {
+    if (losers.length === 0) {
+        updateJsonSync(json);
+    } else {
+        let loser = losers.pop();
+        message.guild.fetchMember(loser).then(member => {
+            message.channel.sendMessage(`!pay ${member.user.id} ${split}`);
+            const filter = m => (m.author.id === "286626550076407810" && m.content.match(member.user.username) && (parseInt(m.content.split(" ")[0]) >= 0));
+            message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
+                splitPayment(id,message,json,losers,split);
+            }).catch(() => {
+                splitPayment(id,message,json,losers,split);
             });
-        })
+        }).catch(err => console.log(err));
     }
 }
 function refundPayment(amount,message) {
@@ -130,15 +145,15 @@ function getAlias(id,amount,message) {
         message.channel.sendMessage(`[ERROR] The channel to manage alias's could not be found. Please contact Harmiox.`);
         return returnMsg;
     }
-    let alias = (`!alias add h${id} bank transfer ${client.user.username} ${amount}`); //269324997691047936
-    channel.sendMessage(alias).then(() => {
-        returnMsg = (`!hpay ${id} ${client.user.username}`);
-        const filter = m => (m.author.id === "286626550076407810");
+    let alias = (`!alias add h${id} bank transfer ${client.user.username} ${amount}`);
+    channel.sendMessage(alias).then(msg => {
+        const filter = m => (m.author.id === "286626550076407810" && m.channel.name ==="bot-log");
         message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
             collection.first().delete();
-            message.delete();
+            msg.delete();
         }).catch(() => {});
     });
+    returnMsg = (`!h${id}`);
     return returnMsg;
 }
 function deleteAlias(id,message) {
@@ -149,53 +164,47 @@ function deleteAlias(id,message) {
         return;
     }
     let alias = (`!alias del h${id}`); //269324997691047936
-    channel.sendMessage(alias).then(() => {
+    channel.sendMessage(alias).then(msg => {
         const filter = m => (m.author.id === "286626550076407810");
         message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
             collection.first().delete();
-            message.delete();
+            msg.delete();
         }).catch(() => {});
     });
 }
 client.on("message", (message) => {
-    if (message.content.startsWith("!test")) {
-        const filter = m => (m.author.id === "228781414986809344" && m.content.match(message.author.username));
-        message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(() => {
-            message.channel.sendMessage("Is the best!");
-        }).catch(() => {});
+    if ((message.content.startsWith("<@") || message.content.startsWith("<@!")) && message.isMentioned(client.user.id) && message.author.bot === false) {
+        let msg = message.content.split(" ").slice(1).join(" ");
+        clev.query(msg).then(function (response) {
+            message.channel.sendMessage("`" + response.output + "`");
+        });
     }
     if (message.channel.name === "heist" && (message.content.startsWith("!") || message.author.id === "286626550076407810")) {
-        let json = getJsonSync();
         if (message.content.startsWith("!heist play") || message.content.startsWith("!hplay")) {
             if (json.active === true) {
-                console.log("true")
-                const filter = m => ((m.author.id === "286626550076407810") && m.content.match(message.author.username));
+                const filter = m => ((m.author.id === "286626550076407810") && m.content.match(message.author.username) && m.content.match("crew"));
                 message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(() => {
                     addCrew(json.current,message,json);
                 }).catch(() => {});
             } else if (json.active === false) {
-                console.log("false")
-                const filter = m => ((m.author.id === "286626550076407810") && m.content.match(message.author.username));
+                const filter = m => ((m.author.id === "286626550076407810") && m.content.match(message.author.username) && m.content.match("crew"));
                 message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(() => {
-                    console.log("HEIST!");
                     json.active = true;
                     json.current = json.heists.length;
-                    console.log(1)
                     message.channel.sendMessage(`The id for this heist is **${json.current}**.`);
                     startHeist(json.current,message,json);
-                    console.log(2)
                 }).catch(() => {});
             }
         } else if (message.content.match("You tried to rally a crew, but no one wanted to follow you. The heist has been cancelled.")) {
-            console.log("cancel heist")
-            endHeist(json.current,message,json);
+            message.channel.sendMessage("Looks like you couldn't pull off the heist. Better luck next time!");
+            endHeist(json);
         } else if (message.content.match("No one made it out safe.") && message.author.id === "286626550076407810") {
-            console.log("endHeist")
-            endHeist(json.current,message,json);
+            message.channel.sendMessage("Looks like you couldn't pull off the heist. Better luck next time!");
+            endHeist(json);
         } else if (message.content.match("The credits collected from the vault was split among the winners:") && message.author.id === "286626550076407810") {
             console.log("Heist was successful! Calculating payments.");
             calculatePayouts(json.current,message,json);
-        } else if (message.content.startsWith("!h") && !message.content.startsWith("!heist play") && !message.content.startsWith("!hplay")) {
+        } else if (message.content.startsWith("!h") && !message.content.startsWith("!heist") && !message.content.startsWith("!hplay")) {
             let valid = false;
             let id = message.content.split(" ")[0].replace("!h","");
             if (!json.heists[id]) {
@@ -208,8 +217,13 @@ client.on("message", (message) => {
             message.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
                 let amount = parseInt(collection.first().content.split(" ")[0]);
                 if (valid === true) {
-                    splitPayment(id,amount,message,json);
-                } {
+                    json.heists[id].owed -= amount;
+                    if (json.heists[id].owed <= 0) {
+                        deleteAlias(id,message);
+                    }
+                    let losers = json.heists[id].losers;
+                    splitPayment(id,message,json,losers,Math.floor(((json.heists[id].stolen * 0.75)) / json.heists[id].losers.length));
+                } else {
                     refundPayment(id,amount,message);
                 }
             }).catch(() => {});
