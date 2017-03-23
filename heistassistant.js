@@ -56,6 +56,37 @@ function calculatePayouts(id,message,json) {
 function splitPayment(id,amount,message,json) {
     console.log(`Splitting payment...`);
 }
+function getAlias(id,amount,message) {
+    let channel = message.guild.channels.find(chan => chan.name === "bot-log");
+    if (!channel) {
+        message.channel.sendMessage(`[ERROR] The channel to manage alias's could not be found. Please contact Harmiox.`);
+        return;
+    }
+    let alias = (`!alias add h${id} bank transfer ${client.user.username} ${amount}`); //269324997691047936
+    channel.sendMessage(alias).then(() => {
+        const filter = m => (m.author.id === "286626550076407810");
+        msg.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
+            collection.first().delete();
+            message.delete();
+        }).catch(() => {});
+    });
+    return (`!hpay ${id} ${client.user.username}`);
+}
+function deleteAlias(id,amount,message) {
+    let channel = message.guild.channels.find(chan => chan.name === "bot-log");
+    if (!channel) {
+        message.channel.sendMessage(`[ERROR] The channel for behind the scenes actions could not be found. Please contact Harmiox.`);
+        return;
+    }
+    let alias = (`!alias del h${id}`); //269324997691047936
+    channel.sendMessage(alias).then(() => {
+        const filter = m => (m.author.id === "286626550076407810");
+        msg.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
+            collection.first().delete();
+            message.delete();
+        }).catch(() => {});
+    });
+}
 client.on("message", (message) => {
     if (message.channel.name === "heist" && (message.content.startsWith("!") || message.author.id === "286626550076407810")) {
         let json = getJsonSync();
@@ -78,16 +109,23 @@ client.on("message", (message) => {
         } else if (message.content.match("The credits collected from the vault was split among the winners") && message.author.id === "286626550076407810") {
             console.log("Heist was successful! Calculating payments.");
             calculatePayouts(json.current,message);
-        } else if (message.content.startsWith("!hpay")) {
-            let id = message.content.split(" ")[1];
-            let amount = message.content.split(" ")[2];
-            if (!id) return;
-            if (!amound return;)
-            if (!json.heists[id]) return;
-            const filter = m => (m.author.id === "286626550076407810" && m.content.match(client.user.username) && m.content.match(amount));
-            msg.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(() => {
-                console.log(`Payment received, splitting between crew for heist ${id}`);
-                splitPayment(id,amount,message);
+        } else if (message.content.startsWith("!h")) {
+            let valid = false;
+            let id = message.content.split(" ")[0].replace("!h","");
+            if (!json.heists[id]) {
+                message.channel.reply("You did not give a valid heist id. If I receive credits they'll be sent back to you.");
+                return;
+            } else {
+                valid = true;
+            }
+            const filter = m => (m.author.id === "286626550076407810" && m.content.match(client.user.username) && (parseInt(m.content.split(" ")[0]) >= 0));
+            msg.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
+                let amount = parseInt(collection.first().content.split(" ")[0]);
+                if (valid === true) {
+                    splitPayment(id,amount,message);
+                } {
+                    refudPayment(id,amount,message);
+                }
             }).catch(() => {});
         }
      }
