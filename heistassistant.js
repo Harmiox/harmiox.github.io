@@ -51,12 +51,17 @@ function addCrew(id,message,json) {
     updateJsonSync(json);
 }
 function calculatePayouts(id,message,json) {
-    console.log(`Calculating payouts...`);
+    console.log(`Calculating payouts for heist ${id}.`);
 }
 function splitPayment(id,amount,message,json) {
-    console.log(`Splitting payment...`);
+    console.log(`Splitting the payment of ${amount} to the crew of heist ${id}.`);
+}
+function refundPayment(amount,message) {
+    console.log(`Refunding the payment of ${amount}.`);
 }
 function getAlias(id,amount,message) {
+    console.log(`Adding alias for heist ${id}.`)
+    let returnMsg = "error"
     let channel = message.guild.channels.find(chan => chan.name === "bot-log");
     if (!channel) {
         message.channel.sendMessage(`[ERROR] The channel to manage alias's could not be found. Please contact Harmiox.`);
@@ -64,15 +69,17 @@ function getAlias(id,amount,message) {
     }
     let alias = (`!alias add h${id} bank transfer ${client.user.username} ${amount}`); //269324997691047936
     channel.sendMessage(alias).then(() => {
+        returnMsg = (`!hpay ${id} ${client.user.username}`);
         const filter = m => (m.author.id === "286626550076407810");
         msg.channel.awaitMessages(filter, {max: 1,time: 30000,errors: ['time']}).then(function(collection) {
             collection.first().delete();
             message.delete();
         }).catch(() => {});
     });
-    return (`!hpay ${id} ${client.user.username}`);
+    return (returnMsg);
 }
 function deleteAlias(id,amount,message) {
+    console.log(`Deleting alias for heist ${id}.`);
     let channel = message.guild.channels.find(chan => chan.name === "bot-log");
     if (!channel) {
         message.channel.sendMessage(`[ERROR] The channel for behind the scenes actions could not be found. Please contact Harmiox.`);
