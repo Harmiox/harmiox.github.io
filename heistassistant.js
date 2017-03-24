@@ -71,9 +71,20 @@ function addCrew(id,message,json) {
     }
     if (exists === false) {
         json.heists[id].crew.push(message.author);
-        message.react('✅');
+        message.react(':white_check_mark:');
         console.log(`Added ${message.author.username} to the crew for heist ${id}.`);
     }
+}
+function listCrew(id, message, json, mention) {
+    let output = "";
+    for (let i = 0; i < json.heists[id].crew.length; i += 1) {
+        if (mention) {
+            output += json.heists[id].crew[i].toString() + " ";
+        } else {
+            output += json.heists[id].crew[i].nickname !== null ? json.heists[id].crew[i].nickname : json.heists[id].crew[i].username + " ";
+        }
+    }
+    message.channel.sendMessage(`Crew for heist ${id}:\n${output}`)
 }
 function calculatePayouts(id,message,json) {
     console.log(`Calculating payouts for heist ${id}.`);
@@ -218,6 +229,17 @@ client.on("message", (message) => {
         } else if (message.content.match("The credits collected from the vault was split among the winners:") && message.author.id === "286626550076407810") {
             console.log("Heist was successful!");
             calculatePayouts(json.current,message,json);
+        } else if (message.content.startsWith("!crew") ) {
+            var arguments = message.content.substring("!crew ".length).split(" ");
+            if (arguments.length < 1) {
+                message.reply("```!crew [id] (mention)\n\nList crew members from heist by id. Include the word mention to mention all crew members.```");
+                return;
+            }
+            if (!json.heists[arguments[0]]) {
+                message.reply("You did not give a valid heist id.");
+                return;
+            }
+            listCrew(arguments[0], message, json, (arguments[1] === "mention" ? true : false));
         } else if (message.content.startsWith("!h") && !message.content.startsWith("!heist") && !message.content.startsWith("!hplay")) {
             let valid = false;
             let id = message.content.split(" ")[0].replace("!h","");
