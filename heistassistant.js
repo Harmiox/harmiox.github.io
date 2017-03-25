@@ -81,7 +81,7 @@ function listCrew(id, message, json, mention) {
         if (mention) {
             output += json.heists[id].crew[i].toString() + " ";
         } else {
-            json.heists[id].crew[i].user.username + " ";
+            output += json.heists[id].crew[i].user.username + " ";
         }
     }
     message.channel.sendMessage(`Crew for heist ${id}:\n${output}`)
