@@ -71,7 +71,7 @@ function addCrew(id,message,json) {
     }
     if (exists === false) {
         json.heists[id].crew.push(message.author);
-        message.react(':white_check_mark:');
+        message.react('✅');
         console.log(`Added ${message.author.username} to the crew for heist ${id}.`);
     }
 }
