@@ -1,3 +1,0 @@
-# We don't want web users to access any file in this directory
-Order Deny,Allow
-Deny from All

@@ -1,0 +1,125 @@
+{
+  "test": "Hello World",
+  "tech": {
+    "number": 345,
+    "first_name": "Juan",
+    "last_name": "Quenga"
+  },
+  "jobs": [
+    {
+      "number": 397465,
+      "type": "P",
+      "customer": {
+        "first_name": "Karen",
+        "last_name": "Anthony",
+        "primary_phone": "2392466983",
+        "seconday_phone": "2392468369",
+        "address": {
+          "street": "2832 Pheasant Run East Dr",
+          "unit": "none",
+          "city": "Wixom",
+          "state": "MI",
+          "zip": "48393"
+        }
+      }
+    },
+    {
+      "number": 373424,
+      "type": "RA",
+      "customer": {
+        "first_name": "Marie",
+        "last_name": "Rhody",
+        "primary_phone": "4079075594",
+        "seconday_phone": "4077589501",
+        "address": {
+          "street": "26930 Victory  Ct",
+          "city": "South Lyon",
+          "state": "MI",
+          "zip": "48178"
+        }
+      }
+    },
+    {
+      "number": 396712,
+      "type": "P",
+      "customer": {
+        "first_name": "Cindy",
+        "last_name": "Goodwin",
+        "primary_phone": "2483301307",
+        "seconday_phone": "2483301307",
+        "address": {
+          "street": "6457 Meyers Ace",
+          "city": "Brighton",
+          "state": "MI",
+          "zip": "48116"
+        }
+      }
+    },
+    {
+      "number": 389999,
+      "type": "P",
+      "customer": {
+        "first_name": "Mandy",
+        "last_name": "Smith",
+        "primary_phone": "7342238945",
+        "seconday_phone": "7342238945",
+        "address": {
+          "street": "2285 Armand Rd",
+          "city": "Howell",
+          "state": "MI",
+          "zip": "48843"
+        }
+      }
+    },
+    {
+      "number": 397430,
+      "type": "P",
+      "customer": {
+        "first_name": "Angela",
+        "last_name": "Martin",
+        "primary_phone": "8104223678",
+        "seconday_phone": "8104223678",
+        "address": {
+          "street": "1361 Remsing St",
+          "city": "Hartland",
+          "state": "MI",
+          "zip": "48353"
+        }
+      }
+    },
+    {
+      "number": 395194,
+      "type": "P",
+      "customer": {
+        "first_name": "Donald",
+        "last_name": "Jacobs",
+        "primary_phone": "8105680424",
+        "seconday_phone": "8105680424",
+        "address": {
+          "street": "6834 Sheldon Rd",
+          "city": "Whitmore Lake",
+          "state": "MI",
+          "zip": "48189"
+        }
+      }
+    },
+    {
+      "number": 397522,
+      "type": "P",
+      "customer": {
+        "first_name": "John",
+        "last_name": "Evans",
+        "primary_phone": "7343763203",
+        "seconday_phone": "7343763203",
+        "address": {
+          "street": "2732 Brent Tree Dr",
+          "city": "Dexter",
+          "state": "MI",
+          "zip": "48130"
+        }
+      }
+    }
+  ]
+
+  
+}
